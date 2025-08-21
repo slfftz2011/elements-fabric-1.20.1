@@ -4,5 +4,6 @@
   "item.elements.lithium_mica_sheet": "鋰雲母殘片",
   "item.elements.lithium_powder": "鋰末",
   "item.elements.lithium_battery": "陰陽蓄鋰之氣匣",
-  "item.elements.impurity": "柔面"
+  "item.elements.impurity": "柔面",
+  "itemGroup.elements_mod_items": "物於元質Mod"
 }

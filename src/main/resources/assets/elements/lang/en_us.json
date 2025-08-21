@@ -4,5 +4,6 @@
   "item.elements.lithium_mica_sheet": "Lithium Mica Sheet",
   "item.elements.lithium_powder": "Lithium Powder",
   "item.elements.lithium_battery": "Lithium Battery",
-  "item.elements.impurity": "Impurity"
+  "item.elements.impurity": "Impurity",
+  "itemGroup.elements_mod_items": "Elements Mod Items"
 }

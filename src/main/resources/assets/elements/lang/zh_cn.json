@@ -4,5 +4,6 @@
   "item.elements.lithium_mica_sheet": "锂云母片",
   "item.elements.lithium_powder": "锂粉",
   "item.elements.lithium_battery": "锂电池",
-  "item.elements.impurity": "杂质"
+  "item.elements.impurity": "杂质",
+  "itemGroup.elements_mod_items": "元素模组物品"
 }
