@@ -1,9 +1,18 @@
 {
   "item.elements.lithium_ingot": "鋰錠",
   "item.elements.lithium_ore_powder": "鋰礦末",
-  "item.elements.lithium_mica_sheet": "鋰雲母殘片",
+  "item.elements.lepidolite_shard": "鋰雲母殘片",
   "item.elements.lithium_powder": "鋰末",
   "item.elements.lithium_battery": "陰陽蓄鋰之氣匣",
   "item.elements.impurity": "柔面",
-  "itemGroup.elements_mod_items": "物於元質Mod"
+  "item.elements.spodumene": "鋰輝石",
+  "item.elements.amblygonite": "鋰磷鋁石",
+  "itemGroup.elements_mod_items": "物於元質模組",
+  "itemGroup.elements_mod_blocks": "塊方於元質模組",
+  "block.elements.spodumene_ore": "鋰輝石礦",
+  "block.elements.amblygonite_ore": "鋰磷鋁石礦",
+  "block.elements.lepidolite_ore": "鋰雲母礦",
+  "block.elements.deepslate_spodumene_ore": "深鋰輝石礦",
+  "block.elements.deepslate_amblygonite_ore": "深鋰磷鋁石礦",
+  "block.elements.lepidolite_block": "鋰雲母塊"
 }

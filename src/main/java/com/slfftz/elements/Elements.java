@@ -1,5 +1,6 @@
 package com.slfftz.elements;
 
+import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.items.ModItemGroups;
 import net.fabricmc.api.ModInitializer;
@@ -21,7 +22,8 @@ public class Elements implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
         ModItems.registerItems();
-        ModItemGroups.registerGroups_();
+        ModBlocks.registerModBlocks();
+        ModItemGroups.registerGroups();
 		LOGGER.info("Hello Elements world!");
 	}
 }

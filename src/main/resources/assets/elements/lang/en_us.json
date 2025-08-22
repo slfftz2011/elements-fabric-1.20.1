@@ -1,9 +1,18 @@
 {
   "item.elements.lithium_ingot": "Lithium Ingot",
   "item.elements.lithium_ore_powder": "Lithium Ore Powder",
-  "item.elements.lithium_mica_sheet": "Lithium Mica Sheet",
+  "item.elements.lepidolite_shard": "Lepidolite Shard",
   "item.elements.lithium_powder": "Lithium Powder",
   "item.elements.lithium_battery": "Lithium Battery",
   "item.elements.impurity": "Impurity",
-  "itemGroup.elements_mod_items": "Elements Mod Items"
+  "item.elements.spodumene": "Spodumene",
+  "item.elements.amblygonite": "Amblygonite",
+  "itemGroup.elements_mod_items": "Elements Mod Items",
+  "itemGroup.elements_mod_blocks": "Elements Mod Blocks",
+  "block.elements.spodumene_ore": "Spodumene Ore",
+  "block.elements.amblygonite_ore": "Amblygonite Ore",
+  "block.elements.lepidolite_ore": "Lepidolite Ore",
+  "block.elements.deepslate_spodumene_ore": "Deepslate Spodumene Ore",
+  "block.elements.deepslate_amblygonite_ore": "Deepslate Amblygonite Ore",
+  "block.elements.lepidolite_block": "Block of Lepidolite"
 }
