@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cuba_all",
+  "textures": {
+    "all": "elements:block/lepidolite_block"
+  }
+}
