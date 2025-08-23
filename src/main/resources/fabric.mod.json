@@ -3,12 +3,12 @@
 	"id": "elements",
 	"version": "${version}",
 	"name": "Elements",
-	"description": "We have added the entire periodic table of elements in Minecraft!",
+	"description": "We have added the entire periodic table of elements in Minecraft!(PS: The access password is \"1145\")",
 	"authors": [
 		"SLFFTZ520"
 	],
 	"contact": {
-		"homepage": "",
+		"homepage": "https://wwxd.lanzouw.com/b014wlykdc",
 		"sources": "https://github.com/slfftz2011/elements-fabric-1.20.1"
 	},
 	"license": "CC0-1.0",

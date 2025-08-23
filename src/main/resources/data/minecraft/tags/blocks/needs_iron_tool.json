@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "elements:spodumene_ore",
+    "elements:amblygonite_ore",
+    "elements:deepslate_spodumene_ore",
+    "elements:deepslate_amblygonite_ore"
+  ]
+}
