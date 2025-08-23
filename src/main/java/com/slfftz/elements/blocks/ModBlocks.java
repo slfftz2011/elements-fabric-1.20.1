@@ -24,6 +24,7 @@ public class ModBlocks {
 
 
     public static Block register(String id, Block block) {
+        registerBlockItems(id, block);
         return Registry.register(Registries.BLOCK, new Identifier(Elements.MOD_ID, id), block);
     }
 
