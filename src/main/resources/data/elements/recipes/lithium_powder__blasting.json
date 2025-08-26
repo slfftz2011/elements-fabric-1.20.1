@@ -1,11 +1,11 @@
 {
   "type": "minecraft:blasting",
   "category": "misc",
-  "cookingtime": 80,
+  "cookingtime": 110,
   "experience": 0.8,
   "group": "lithium_ingot",
   "ingredient": {
-    "item": "elements:lithium_ingot_billet"
+    "tag": "elements:lithium_ores"
   },
-  "result": "elements:lithium_ingot"
+  "result":  "elements:lithium_powder"
 }

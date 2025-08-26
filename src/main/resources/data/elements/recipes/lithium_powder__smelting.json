@@ -1,11 +1,11 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "cookingtime": 160,
+  "cookingtime": 210,
   "experience": 0.8,
   "group": "lithium_ingot",
   "ingredient": {
-    "item": "elements:lithium_ingot_billet"
+    "tag": "elements:lithium_ores"
   },
-  "result": "elements:lithium_ingot"
+  "result": "elements:lithium_powder"
 }
