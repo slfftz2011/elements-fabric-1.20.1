@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lepidolite_block",
+  "key": {
+    "#": {
+      "item": "elements:lepidolite_shard"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "elements:lepidolite_block"
+  },
+  "show_notification": true
+}

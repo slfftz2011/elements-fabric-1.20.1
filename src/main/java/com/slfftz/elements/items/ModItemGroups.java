@@ -34,6 +34,7 @@ public class ModItemGroups {
                         entries.add(ModItems.IMPURITY);
                         entries.add(ModItems.SPODUMENE);
                         entries.add(ModItems.AMBLYGONITE);
+                        entries.add(ModItems.LITHIUM_INGOT_BILLET);
                     }).build());
 
     public static final ItemGroup ELEMENTS_MOD_BLOCKS = Registry.register(

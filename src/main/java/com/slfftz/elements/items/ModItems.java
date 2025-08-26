@@ -23,6 +23,7 @@ public class ModItems {
     public static final Item IMPURITY = registerItem("impurity", new Item(new Item.Settings()));
     public static final Item SPODUMENE = registerItem("spodumene", new Item(new Item.Settings()));
     public static final Item AMBLYGONITE = registerItem("amblygonite", new Item(new Item.Settings()));
+    public static final Item LITHIUM_INGOT_BILLET = registerItem("lithium_ingot_billet", new Item(new Item.Settings()));
 
 
     public static Item registerItems(String id, Item item) {
