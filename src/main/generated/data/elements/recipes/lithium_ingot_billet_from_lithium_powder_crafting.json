@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "elements:lithium_powder"
+    },
+    {
+      "item": "elements:lithium_powder"
+    },
+    {
+      "item": "elements:lithium_powder"
+    },
+    {
+      "item": "elements:lithium_powder"
+    }
+  ],
+  "result": {
+    "item": "elements:lithium_ingot_billet"
+  }
+}

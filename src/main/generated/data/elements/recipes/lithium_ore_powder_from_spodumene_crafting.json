@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "elements:spodumene"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "elements:lithium_ore_powder"
+  }
+}

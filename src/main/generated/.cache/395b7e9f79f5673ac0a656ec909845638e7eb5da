@@ -1,0 +1,9 @@
+// 1.20.1	2025-08-30T20:21:45.7838478	Elements/Block Loot Tables
+d53563f2dc0bcb5e44274c8e24c748b055d95459 data\elements\loot_tables\blocks\amblygonite_ore.json
+280df1cd0eadc306bd9de736f72874110530e94b data\elements\loot_tables\blocks\amblygonite_block.json
+97b1f2c55042f010641254faab64c121ff156352 data\elements\loot_tables\blocks\lepidolite_block.json
+7cfef13425b9d4255dc3b720b17991b58d9e0e4c data\elements\loot_tables\blocks\deepslate_amblygonite_ore.json
+0a81a700f0fc272fabdacefdd99bba82424a7887 data\elements\loot_tables\blocks\deepslate_spodumene_ore.json
+577d48c0641f21e951ee9e4a3289cc1b4b70c1c3 data\elements\loot_tables\blocks\lepidolite_ore.json
+99695d6e8a45b5b9536cebd3bd0d866049c47482 data\elements\loot_tables\blocks\spodumene_ore.json
+9a0524e400b149b672a4f7725231945c728b414b data\elements\loot_tables\blocks\spodumene_block.json

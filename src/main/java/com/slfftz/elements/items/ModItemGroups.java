@@ -50,6 +50,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.DEEPSLATE_SPODUMENE_ORE);
                         entries.add(ModBlocks.DEEPSLATE_AMBLYGONITE_ORE);
                         entries.add(ModBlocks.LEPIDOLITE_BLOCK);
+                        entries.add(ModBlocks.SPODUMENE_BLOCK);
+                        entries.add(ModBlocks.AMBLYGONITE_BLOCK);
                     }).build());
     public static void registerGroups() {
 
