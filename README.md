@@ -75,6 +75,9 @@ Except where otherwise stated, the content of this repository is provided under 
 [蓝奏云](https://pc.woozooo.com/)不限速下载支持
 
 <div align="center">
+    <a href="https://wwxd.lanzouw.com/ieX4H35t0zcf">
+        <img src="src/main/resources/assets/elements/download_tags/0-5-0.png" alt="v0.5.0">
+    </a>
     <a href="https://wwxd.lanzouw.com/iKRkw350iqgj">
         <img src="src/main/resources/assets/elements/download_tags/0-4-1.png" alt="v0.4.1">
     </a>
