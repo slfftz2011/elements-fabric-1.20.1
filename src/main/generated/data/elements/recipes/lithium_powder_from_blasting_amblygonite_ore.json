@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 110,
+  "experience": 0.8,
+  "group": "lithium_powder",
+  "ingredient": {
+    "item": "elements:amblygonite_ore"
+  },
+  "result": "elements:lithium_powder"
+}

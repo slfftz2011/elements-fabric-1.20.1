@@ -1,0 +1,21 @@
+{
+  "block.elements.amblygonite_block": "Block of Amblygonite",
+  "block.elements.amblygonite_ore": "Amblygonite Ore",
+  "block.elements.deepslate_amblygonite_ore": "Deepslate Amblygonite Ore",
+  "block.elements.deepslate_spodumene_ore": "Deepslate Spodumene Ore",
+  "block.elements.lepidolite_block": "Block of Lepidolite",
+  "block.elements.lepidolite_ore": "Lepidolite Ore",
+  "block.elements.spodumene_block": "Block of Spodumene",
+  "block.elements.spodumene_ore": "Spodumene Ore",
+  "item.elements.amblygonite": "Amblygonite",
+  "item.elements.impurity": "Impurity",
+  "item.elements.lepidolite_shard": "Lepidolite Shard",
+  "item.elements.lithium_battery": "Lithium Battery",
+  "item.elements.lithium_ingot": "Lithium Ingot",
+  "item.elements.lithium_ingot_billet": "Lithium Billet",
+  "item.elements.lithium_ore_powder": "Lithium Ore Powder",
+  "item.elements.lithium_powder": "Lithium Powder",
+  "item.elements.spodumene": "Spodumene",
+  "itemGroup.elements_mod_blocks": "Elements Mod Blocks",
+  "itemGroup.elements_mod_items": "Elements Mod Items"
+}

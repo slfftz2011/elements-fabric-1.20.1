@@ -31,4 +31,10 @@ public class ElementsDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }
+
+    // 新增：确保数据生成器能正确找到游戏资源
+    @Override
+    public String getEffectiveModId() {
+        return Elements.MOD_ID;
+    }
 }

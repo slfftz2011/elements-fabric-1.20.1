@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "elements:lithium_ore_powder"
+    },
+    "@": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "###",
+    "#@#",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "item": "elements:lithium_powder"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "elements:lepidolite_ore",
+    "elements:lepidolite_block"
+  ]
+}

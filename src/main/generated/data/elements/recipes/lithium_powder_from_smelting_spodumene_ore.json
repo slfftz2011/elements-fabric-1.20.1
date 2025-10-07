@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 210,
+  "experience": 0.8,
+  "group": "lithium_powder",
+  "ingredient": {
+    "item": "elements:spodumene_ore"
+  },
+  "result": "elements:lithium_powder"
+}
