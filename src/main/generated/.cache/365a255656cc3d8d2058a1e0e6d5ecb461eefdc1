@@ -1,4 +1,0 @@
-// 1.20.1	2025-08-30T20:21:45.7823979	Elements/Tags for minecraft:block
-c40f354185a7ebee82b4087b3e2afb37fab0083e data\minecraft\tags\blocks\needs_stone_tool.json
-9b50e62d7fd71ddf5c0f7c1c8a7ed2b302ae61b8 data\minecraft\tags\blocks\mineable\pickaxe.json
-73bffc776e23f8f89680ebb39a392d5c6bebc32b data\minecraft\tags\blocks\needs_iron_tool.json

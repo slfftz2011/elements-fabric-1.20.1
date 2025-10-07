@@ -70,7 +70,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .pattern("##")
                 .input('#', ModItems.LEPIDOLITE_SHARD)
                 .criterion(hasItem(ModItems.LEPIDOLITE_SHARD), conditionsFromItem(ModItems.LEPIDOLITE_SHARD))
-                .offerTo(exporter, new Identifier(Elements.MOD_ID, "lepidolite_block_from_lepidolite_sharp_crafting"));
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "lepidolite_block_from_lepidolite_shard_crafting"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LITHIUM_POWDER, 3)
                 .pattern("###")
