@@ -11,7 +11,12 @@ import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
 
@@ -26,6 +31,11 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_SPODUMENE_ORE_KEY = of("deepslate_spodumene_ore");
     // 深层锂磷铝石矿配置键
     public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_AMBLYGONITE_ORE_KEY = of("deepslate_amblygonite_ore");
+
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MULBERRY_TREE = RegistryKey.of(
+            RegistryKeys.CONFIGURED_FEATURE, new Identifier("elements", "mulberry_tree")
+    );
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         // 定义替换规则
@@ -57,8 +67,16 @@ public class ModConfiguredFeatures {
                 new OreFeatureConfig(List.of(
                         OreFeatureConfig.createTarget(graniteReplace, ModBlocks.LEPIDOLITE_ORE.getDefaultState())
                 ), 10));
-    }
 
+        ConfiguredFeatures.register(featureRegisterable, MULBERRY_TREE, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlocks.MULBERRY_LOG),
+                        new StraightTrunkPlacer(4,2,1),
+                        BlockStateProvider.of(ModBlocks.MULBERRY_LEAVES),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(2), 3),
+                        new TwoLayersFeatureSize(1, 0, 2)
+                ).build());
+    }
     public static RegistryKey<ConfiguredFeature<?, ?>> of(String id) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(Elements.MOD_ID, id));
     }

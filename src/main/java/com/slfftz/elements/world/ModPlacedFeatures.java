@@ -1,6 +1,7 @@
 package com.slfftz.elements.world;
 
 import com.slfftz.elements.Elements;
+import com.slfftz.elements.blocks.ModBlocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
@@ -10,9 +11,12 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
+
+import static com.slfftz.elements.world.ModConfiguredFeatures.MULBERRY_TREE;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SPODUMENE_ORE_PLACED_KEY = of("spodumene_ore_placed");
@@ -20,6 +24,11 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> LEPIDOLITE_ORE_PLACED_KEY = of("lepidolite_ore_placed");
     public static final RegistryKey<PlacedFeature> DEEPSLATE_SPODUMENE_ORE_PLACED_KEY = of("deepslate_spodumene_ore_placed");
     public static final RegistryKey<PlacedFeature> DEEPSLATE_AMBLYGONITE_ORE_PLACED_KEY = of("deepslate_amblygonite_ore_placed");
+
+
+    public static final RegistryKey<PlacedFeature> MULBERRY_TREE_PLACED = RegistryKey.of(
+            RegistryKeys.PLACED_FEATURE, new Identifier("elements", "mulberry_tree_placed")
+    );
 
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryEntryLookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -51,6 +60,13 @@ public class ModPlacedFeatures {
                 modifiersWithCount(6,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-50), YOffset.fixed(-4))));
 
+
+        PlacedFeatures.register(featureRegisterable, MULBERRY_TREE_PLACED,
+                registryEntryLookup.getOrThrow(MULBERRY_TREE),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),
+                        ModBlocks.MULBERRY_SAPLING
+                ));
     }
 
     public static RegistryKey<PlacedFeature> of(String id) {

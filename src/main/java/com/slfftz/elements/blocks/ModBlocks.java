@@ -1,6 +1,10 @@
 package com.slfftz.elements.blocks;
 
 import com.slfftz.elements.Elements;
+import com.slfftz.elements.world.tree.MulberryGeneration;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
@@ -25,6 +29,40 @@ public class ModBlocks {
     public static final Block AMBLYGONITE_BLOCK = register("amblygonite_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.ORANGE).instrument(Instrument.IRON_XYLOPHONE).nonOpaque().strength(3.5F, 3.5F)));
 
 
+    private static final AbstractBlock.Settings WOOD = FabricBlockSettings.copyOf(Blocks.OAK_LOG);
+    private static final AbstractBlock.Settings PLANKS = FabricBlockSettings.copyOf(Blocks.OAK_PLANKS);
+    private static final AbstractBlock.Settings LEAVES = FabricBlockSettings.copyOf(Blocks.OAK_LEAVES);
+
+    // 原木 / 去皮原木
+    public static final Block MULBERRY_LOG = register("mulberry_log", new PillarBlock(WOOD));
+    public static final Block STRIPPED_MULBERRY_LOG = register("stripped_mulberry_log", new PillarBlock(WOOD));
+    public static final Block MULBERRY_WOOD = register("mulberry_wood", new PillarBlock(WOOD));
+    public static final Block STRIPPED_MULBERRY_WOOD = register("stripped_mulberry_wood", new PillarBlock(WOOD));
+
+    // 木板
+    public static final Block MULBERRY_PLANKS = register("mulberry_planks", new Block(PLANKS));
+
+    // 楼梯 / 台阶
+    public static final Block MULBERRY_STAIRS = register("mulberry_stairs", new StairsBlock(MULBERRY_PLANKS.getDefaultState(), PLANKS));
+    public static final Block MULBERRY_SLAB = register("mulberry_slab", new SlabBlock(PLANKS));
+
+    // 栅栏 / 栅栏门
+    public static final Block MULBERRY_FENCE = register("mulberry_fence", new FenceBlock(AbstractBlock.Settings.copy(MULBERRY_PLANKS)));
+    public static final Block MULBERRY_FENCE_GATE = register("mulberry_fence_gate", new FenceGateBlock(AbstractBlock.Settings.copy(MULBERRY_PLANKS), WoodType.OAK));
+
+    // 门 / 活板门
+    public static final Block MULBERRY_DOOR = register("mulberry_door", new DoorBlock(PLANKS.nonOpaque(), BlockSetType.OAK));
+    public static final Block MULBERRY_TRAPDOOR = register("mulberry_trapdoor", new TrapdoorBlock(PLANKS.nonOpaque(), BlockSetType.OAK));
+
+    // 按钮 / 压力板
+    public static final Block MULBERRY_BUTTON = register("mulberry_button", new ButtonBlock(PLANKS, BlockSetType.OAK, 30, true));
+    public static final Block MULBERRY_PRESSURE_PLATE = register("mulberry_pressure_plate", new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, PLANKS, BlockSetType.OAK));
+
+    // 树叶 / 树苗
+    public static final Block MULBERRY_LEAVES = register("mulberry_leaves", new LeavesBlock(LEAVES));
+    public static final Block MULBERRY_SAPLING = register("mulberry_sapling", new SaplingBlock(new MulberryGeneration(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+
+
     public static Block register(String id, Block block) {
         registerBlockItems(id, block);
         return Registry.register(Registries.BLOCK, new Identifier(Elements.MOD_ID, id), block);
@@ -36,7 +74,21 @@ public class ModBlocks {
 
 
     public static void registerModBlocks() {
+        // 可剥离注册
+        StrippableBlockRegistry.register(MULBERRY_LOG, STRIPPED_MULBERRY_LOG);
+        StrippableBlockRegistry.register(MULBERRY_WOOD, STRIPPED_MULBERRY_WOOD);
 
+        // 可燃注册
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_MULBERRY_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_MULBERRY_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_SLAB, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_FENCE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_FENCE_GATE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_LEAVES, 30, 60);
     }
 
     public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
