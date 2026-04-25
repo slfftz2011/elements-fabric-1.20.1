@@ -32,6 +32,23 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.SPODUMENE_BLOCK, "Block of Spodumene");
         translationBuilder.add(ModBlocks.AMBLYGONITE_BLOCK, "Block of Amblygonite");
 
+        translationBuilder.add(ModBlocks.MULBERRY_BUTTON, "Mulberry Button");
+        translationBuilder.add(ModBlocks.MULBERRY_DOOR, "Mulberry Door");
+        translationBuilder.add(ModBlocks.MULBERRY_FENCE, "Mulberry Fence");
+        translationBuilder.add(ModBlocks.MULBERRY_FENCE_GATE, "Mulberry Fence Gate");
+        translationBuilder.add(ModBlocks.MULBERRY_LEAVES, "Mulberry Leaves");
+        translationBuilder.add(ModBlocks.MULBERRY_LOG, "Mulberry Log");
+        translationBuilder.add(ModBlocks.MULBERRY_PLANKS, "Mulberry Planks");
+        translationBuilder.add(ModBlocks.MULBERRY_PRESSURE_PLATE, "Mulberry Pressure Plate");
+        translationBuilder.add(ModBlocks.MULBERRY_SAPLING, "Mulberry Sapling");
+        translationBuilder.add(ModBlocks.MULBERRY_SLAB, "Mulberry Slab");
+        translationBuilder.add(ModBlocks.MULBERRY_STAIRS, "Mulberry Stairs");
+        translationBuilder.add(ModBlocks.MULBERRY_TRAPDOOR, "Mulberry Trapdoor");
+        translationBuilder.add(ModBlocks.MULBERRY_WOOD, "Mulberry Wood");
+        translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_LOG, "Stripped Mulberry Log");
+        translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_WOOD, "Stripped Mulberry Wood");
+
+
         translationBuilder.add("itemGroup.elements_mod_items", "Elements Mod Items");
         translationBuilder.add("itemGroup.elements_mod_blocks","Elements Mod Blocks");
     }

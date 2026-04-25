@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-25T18:46:02.8702398	Elements/Model Definitions
+// 1.20.1	2026-04-25T22:09:47.9281996	Elements/Model Definitions
 44a22e5904ed3a0adf91456f0ebf8af18036a3f2 assets\elements\models\block\stripped_mulberry_wood.json
 26eba91d1b98cd3cf10159d2ea89d60a4f0bfd7e assets\elements\models\block\mulberry_stairs_outer.json
 0c0c5a379cf89f0ab72a57784afbd976d38176f7 assets\elements\blockstates\lepidolite_block.json
@@ -13,8 +13,8 @@ a4aa2b14f225ee00953ae2b8a2b85771c9e46128 assets\elements\models\block\mulberry_p
 7fe858e00f84c5b2c7daf5289e1e28fc0f6b2cd7 assets\elements\models\block\mulberry_door_top_left_open.json
 7ddec792c53a2f9bd2cbf72d2c8b25956ec32de1 assets\elements\models\block\lepidolite_ore.json
 bf6410aeec99a310f1e33a54c4c890c4b96b1ddd assets\elements\models\block\spodumene_ore.json
-05c78bcbc304277197d1d7232f53c794f63f2596 assets\elements\models\item\lithium_ore_powder.json
 6c9e3518522928a9ff7cd1ef53df191af56e27f2 assets\elements\blockstates\spodumene_block.json
+05c78bcbc304277197d1d7232f53c794f63f2596 assets\elements\models\item\lithium_ore_powder.json
 0b4d86a1010d5939377925ee55592ce28ba841f8 assets\elements\blockstates\mulberry_fence_gate.json
 e318b0027d23e5a3d1a39044904187a158547f32 assets\elements\blockstates\mulberry_log.json
 4bb20f5d82feed01f96aca462100b05a57c284ef assets\elements\models\item\amblygonite_ore.json
@@ -40,8 +40,8 @@ dc0248b373b8c3bf56901733043f34a43d4bb889 assets\elements\models\item\stripped_mu
 68bd48107e97ddbc8377c22faf15c4a9a552c6bc assets\elements\blockstates\spodumene_ore.json
 b9aceed00946f5e995678c376b9d40cd4976375a assets\elements\models\block\amblygonite_ore.json
 8d29981161bbc0b78624db8d555781dd78efc508 assets\elements\models\block\mulberry_door_bottom_left_open.json
-dea719bf1f27b79f15d291f7b2f46dad0d1ee91d assets\elements\models\item\lepidolite_shard.json
 f5383727613cfc7095f481038f447e05ec6fff64 assets\elements\models\block\mulberry_fence_gate_wall.json
+dea719bf1f27b79f15d291f7b2f46dad0d1ee91d assets\elements\models\item\lepidolite_shard.json
 9778051dde43b2bd4dfac2c857ecff7c23d7a3b5 assets\elements\blockstates\lepidolite_ore.json
 cffcdb09aca9fcd703f84719df1a234601f09d2e assets\elements\models\block\mulberry_slab.json
 66b9c74f70e03413527bf5ddd217d179566e38a1 assets\elements\blockstates\mulberry_door.json
@@ -85,8 +85,8 @@ cef3796b7e19e563dd3abc5c8551a209fc4051d6 assets\elements\models\block\mulberry_s
 b6e412d0a3b37370f2cfa7182f6770077505c332 assets\elements\blockstates\mulberry_pressure_plate.json
 884c04b564d0dbc72630410e914af08dc24a1ac9 assets\elements\models\item\stripped_mulberry_log.json
 a80683b299fd6037e83d6feecf2250c00bdbf323 assets\elements\models\block\mulberry_fence_side.json
-5ddc0f577d5957da65a14521b277339a76123898 assets\elements\models\item\spodumene.json
 25e17fb72b9a3929b3966e2f741c82da28db4930 assets\elements\models\block\mulberry_button.json
+5ddc0f577d5957da65a14521b277339a76123898 assets\elements\models\item\spodumene.json
 6d1bae037f69674e6b7028e31ee2ffc3ba1e9cd9 assets\elements\models\item\mulberry_log.json
 c8c36bedb8a8d9e6dc0ba320ddc29f3ebeef63ba assets\elements\models\item\mulberry_trapdoor.json
 fbc6e401f144bc55b9009c3b68d95dbaec1056b0 assets\elements\models\item\mulberry_slab.json

@@ -32,6 +32,22 @@ public class ModLzhLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.SPODUMENE_BLOCK, "鋰輝石塊");
         translationBuilder.add(ModBlocks.AMBLYGONITE_BLOCK, "鋰磷鋁石塊");
 
+        translationBuilder.add(ModBlocks.MULBERRY_BUTTON, "桑鈕");
+        translationBuilder.add(ModBlocks.MULBERRY_DOOR, "桑門");
+        translationBuilder.add(ModBlocks.MULBERRY_FENCE, "桑㩜");
+        translationBuilder.add(ModBlocks.MULBERRY_FENCE_GATE, "桑扉");
+        translationBuilder.add(ModBlocks.MULBERRY_LEAVES, "桑葉");
+        translationBuilder.add(ModBlocks.MULBERRY_LOG, "桑樁");
+        translationBuilder.add(ModBlocks.MULBERRY_PLANKS, "桑材");
+        translationBuilder.add(ModBlocks.MULBERRY_PRESSURE_PLATE, "桑踏板");
+        translationBuilder.add(ModBlocks.MULBERRY_SAPLING, "桑秧");
+        translationBuilder.add(ModBlocks.MULBERRY_SLAB, "桑版");
+        translationBuilder.add(ModBlocks.MULBERRY_STAIRS, "桑階");
+        translationBuilder.add(ModBlocks.MULBERRY_TRAPDOOR, "桑窖門");
+        translationBuilder.add(ModBlocks.MULBERRY_WOOD, "桑木");
+        translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_LOG, "既扡桑樁");
+        translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_WOOD, "既扡桑木");
+
         translationBuilder.add("itemGroup.elements_mod_items", "物於元質模組");
         translationBuilder.add("itemGroup.elements_mod_blocks","塊方於元質模組");
     }
