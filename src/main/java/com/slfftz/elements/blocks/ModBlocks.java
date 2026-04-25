@@ -1,6 +1,7 @@
 package com.slfftz.elements.blocks;
 
 import com.slfftz.elements.Elements;
+import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.world.tree.MulberryGeneration;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
@@ -19,14 +20,46 @@ import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
-    public static final Block SPODUMENE_ORE = register("spodumene_ore", new Block(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(3.5F, 3.5F)));
-    public static final Block AMBLYGONITE_ORE = register("amblygonite_ore", new Block(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
-    public static final Block LEPIDOLITE_ORE = register("lepidolite_ore", new Block(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F,3.5F)));
-    public static final Block DEEPSLATE_SPODUMENE_ORE = register("deepslate_spodumene_ore", new Block(AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(5.0F, 4.5F)));
-    public static final Block DEEPSLATE_AMBLYGONITE_ORE = register("deepslate_amblygonite_ore", new Block(AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(4.5F, 4.5F)));
-    public static final Block LEPIDOLITE_BLOCK = register("lepidolite_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.DULL_PINK).instrument(Instrument.HARP).requiresTool().strength(1.5F, 1.5F)));
-    public static final Block SPODUMENE_BLOCK = register("spodumene_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.PINK).instrument(Instrument.IRON_XYLOPHONE).nonOpaque().strength(4.0F, 3.5F)));
-    public static final Block AMBLYGONITE_BLOCK = register("amblygonite_block", new Block(AbstractBlock.Settings.create().mapColor(MapColor.ORANGE).instrument(Instrument.IRON_XYLOPHONE).nonOpaque().strength(3.5F, 3.5F)));
+    public static final Block SPODUMENE_ORE = register("spodumene_ore", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.STONE_GRAY)
+            .instrument(Instrument.BASEDRUM)
+            .requiresTool()
+            .strength(3.5F, 3.5F)));
+    public static final Block AMBLYGONITE_ORE = register("amblygonite_ore", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.STONE_GRAY)
+            .instrument(Instrument.BASEDRUM)
+            .requiresTool()
+            .strength(3.0F, 3.0F)));
+    public static final Block LEPIDOLITE_ORE = register("lepidolite_ore", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.DIRT_BROWN)
+            .instrument(Instrument.BASEDRUM)
+            .requiresTool()
+            .strength(1.5F,3.5F)));
+    public static final Block DEEPSLATE_SPODUMENE_ORE = register("deepslate_spodumene_ore", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.DEEPSLATE_GRAY)
+            .instrument(Instrument.BASEDRUM)
+            .requiresTool()
+            .strength(5.0F, 4.5F)));
+    public static final Block DEEPSLATE_AMBLYGONITE_ORE = register("deepslate_amblygonite_ore", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.DEEPSLATE_GRAY)
+            .instrument(Instrument.BASEDRUM)
+            .requiresTool()
+            .strength(4.5F, 4.5F)));
+    public static final Block LEPIDOLITE_BLOCK = register("lepidolite_block", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.DULL_PINK)
+            .instrument(Instrument.HARP)
+            .requiresTool()
+            .strength(1.5F, 1.5F)));
+    public static final Block SPODUMENE_BLOCK = register("spodumene_block", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.PINK)
+            .instrument(Instrument.IRON_XYLOPHONE)
+            .nonOpaque()
+            .strength(4.0F, 3.5F)));
+    public static final Block AMBLYGONITE_BLOCK = register("amblygonite_block", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.ORANGE)
+            .instrument(Instrument.IRON_XYLOPHONE)
+            .nonOpaque()
+            .strength(3.5F, 3.5F)));
 
 
     private static final AbstractBlock.Settings WOOD = FabricBlockSettings.copyOf(Blocks.OAK_LOG);
@@ -65,7 +98,9 @@ public class ModBlocks {
 
     public static Block register(String id, Block block) {
         registerBlockItems(id, block);
-        return Registry.register(Registries.BLOCK, new Identifier(Elements.MOD_ID, id), block);
+        Block block_item = Registry.register(Registries.BLOCK, new Identifier(Elements.MOD_ID, id), block);
+        ModItems.elements_mod_blocks.add(block_item);
+        return block_item;
     }
 
     public static void registerBlockItems(String id, Block block) {

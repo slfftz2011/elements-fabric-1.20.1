@@ -2,10 +2,8 @@ package com.slfftz.elements.items;
 
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlocks;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.block.Block;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -26,15 +24,9 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemGroup.elements_mod_items"))
                     .icon(() -> new ItemStack(ModItems.LITHIUM_INGOT))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModItems.LITHIUM_INGOT);
-                        entries.add(ModItems.LITHIUM_ORE_POWDER);
-                        entries.add(ModItems.LEPIDOLITE_SHARD);
-                        entries.add(ModItems.LITHIUM_POWDER);
-                        entries.add(ModItems.LITHIUM_BATTERY);
-                        entries.add(ModItems.IMPURITY);
-                        entries.add(ModItems.SPODUMENE);
-                        entries.add(ModItems.AMBLYGONITE);
-                        entries.add(ModItems.LITHIUM_INGOT_BILLET);
+                        for (Item entry : ModItems.elements_mod_items) {
+                            entries.add(entry);
+                        }
                     }).build());
 
     public static final ItemGroup ELEMENTS_MOD_BLOCKS = Registry.register(
@@ -44,17 +36,11 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemGroup.elements_mod_blocks"))
                     .icon(() -> new ItemStack(ModBlocks.LEPIDOLITE_BLOCK))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.SPODUMENE_ORE);
-                        entries.add(ModBlocks.AMBLYGONITE_ORE);
-                        entries.add(ModBlocks.LEPIDOLITE_ORE);
-                        entries.add(ModBlocks.DEEPSLATE_SPODUMENE_ORE);
-                        entries.add(ModBlocks.DEEPSLATE_AMBLYGONITE_ORE);
-                        entries.add(ModBlocks.LEPIDOLITE_BLOCK);
-                        entries.add(ModBlocks.SPODUMENE_BLOCK);
-                        entries.add(ModBlocks.AMBLYGONITE_BLOCK);
-                        entries.add(ModBlocks.MULBERRY_LOG);
-
+                        for (Block entry : ModItems.elements_mod_blocks) {
+                            entries.add(entry);
+                        }
                     }).build());
+
     public static void registerGroups() {
 
     }

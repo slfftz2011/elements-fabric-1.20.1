@@ -1,4 +1,4 @@
-package com.slfftz.elements.datagen;
+package com.slfftz.elements.datagen.languages;
 
 import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.items.ModItems;

@@ -1,8 +1,7 @@
-package com.slfftz.elements.datagen;
+package com.slfftz.elements.datagen.languages;
 
 import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.items.ModItems;
-import com.slfftz.elements.items.ModItemGroups;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 

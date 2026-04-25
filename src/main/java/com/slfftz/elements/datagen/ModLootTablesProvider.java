@@ -45,7 +45,7 @@ public class ModLootTablesProvider extends FabricBlockLootTableProvider {
     public LootTable.Builder genericOreDrops(Block drop, Item item, float min, float max) {
         return dropsWithSilkTouch(
                 drop,
-                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                this.applyExplosionDecay(
                         drop,
                         ItemEntry.builder(item)
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max)))

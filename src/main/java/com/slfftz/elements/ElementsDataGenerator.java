@@ -1,13 +1,14 @@
 package com.slfftz.elements;
 
 import com.slfftz.elements.datagen.*;
+import com.slfftz.elements.datagen.languages.ModEnUsLangProvider;
+import com.slfftz.elements.datagen.languages.ModLzhLangProvider;
+import com.slfftz.elements.datagen.languages.ModZhCnLangProvider;
 import com.slfftz.elements.world.ModConfiguredFeatures;
 import com.slfftz.elements.world.ModPlacedFeatures;
-import com.slfftz.elements.world.ModWorldGeneration;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 
 public class ElementsDataGenerator implements DataGeneratorEntrypoint {
@@ -32,7 +33,6 @@ public class ElementsDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }
 
-    // 新增：确保数据生成器能正确找到游戏资源
     @Override
     public String getEffectiveModId() {
         return Elements.MOD_ID;
