@@ -9,8 +9,9 @@ public class ElementsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient()
     {
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MULBERRY_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MULBERRY_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MULBERRY_DOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MULBERRY_TRAPDOOR, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MULBERRY_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AMBLYGONITE_BLOCK, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SPODUMENE_BLOCK, RenderLayer.getTranslucent());
     }

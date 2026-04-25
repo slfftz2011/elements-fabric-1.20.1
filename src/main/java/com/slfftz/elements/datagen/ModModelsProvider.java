@@ -39,6 +39,9 @@ public class ModModelsProvider extends FabricModelProvider {
                         blockStateModelGenerator.
                                 registerCubeAllModelTexturePool(family.getBaseBlock())
                                 .family(family));
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MULBERRY_LEAVES);
     }
 
     public Identifier id(Block block) {
