@@ -3,7 +3,6 @@ package com.slfftz.elements.blocks;
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.world.tree.MulberryGeneration;
-import com.terraformersmc.terraform.sign.TerraformHangingSign;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
@@ -17,7 +16,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 

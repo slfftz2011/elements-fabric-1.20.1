@@ -47,7 +47,7 @@ public class ModLootTablesProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MULBERRY_SAPLING);
         addDrop(ModBlocks.MULBERRY_LEAVES, leavesDrops(ModBlocks.MULBERRY_LEAVES, ModBlocks.MULBERRY_SAPLING, 0.05F, 0.0625F, 0.083333336F, 0.1F));
         addDrop(ModBlocks.MULBERRY_SIGN);
-        addDrop(ModBlocks.MULBERRY_WALL_SIGN);
+        addDrop(ModBlocks.MULBERRY_HANGING_SIGN);
     }
 
     public LootTable.Builder genericOreDrops(Block drop, Item item, float min, float max) {
