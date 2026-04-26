@@ -20,6 +20,7 @@ public class ModBlockFamilies {
             .fenceGate(ModBlocks.MULBERRY_FENCE_GATE)
             .door(ModBlocks.MULBERRY_DOOR)
             .trapdoor(ModBlocks.MULBERRY_TRAPDOOR)
+            .sign(ModBlocks.MULBERRY_SIGN, ModBlocks.MULBERRY_WALL_SIGN)
             .build();
 
 
