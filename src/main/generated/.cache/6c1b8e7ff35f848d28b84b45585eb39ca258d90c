@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-26T21:48:04.9187719	Elements/Model Definitions
+// 1.20.1	2026-04-26T22:33:57.3896632	Elements/Model Definitions
 44a22e5904ed3a0adf91456f0ebf8af18036a3f2 assets\elements\models\block\stripped_mulberry_wood.json
 26eba91d1b98cd3cf10159d2ea89d60a4f0bfd7e assets\elements\models\block\mulberry_stairs_outer.json
 0c0c5a379cf89f0ab72a57784afbd976d38176f7 assets\elements\blockstates\lepidolite_block.json
@@ -81,8 +81,8 @@ b9aceed00946f5e995678c376b9d40cd4976375a assets\elements\models\block\amblygonit
 8d29981161bbc0b78624db8d555781dd78efc508 assets\elements\models\block\mulberry_door_bottom_left_open.json
 dea719bf1f27b79f15d291f7b2f46dad0d1ee91d assets\elements\models\item\lepidolite_shard.json
 9778051dde43b2bd4dfac2c857ecff7c23d7a3b5 assets\elements\blockstates\lepidolite_ore.json
-6c667d9d36279984c63d9de552a7116aa2cc1f63 assets\elements\models\item\amblygonite_block.json
 e2c9258cb6646ffb932e26e5b985d2961e303e7e assets\elements\models\item\spodumene_block.json
+6c667d9d36279984c63d9de552a7116aa2cc1f63 assets\elements\models\item\amblygonite_block.json
 a001f6a108cd37bae21a1553dd3c00b8959a46d4 assets\elements\models\block\spodumene_block.json
 cea765f9648677ede55810209ed146a0bcc9fa7d assets\elements\models\item\mulberry_planks.json
 bea27dfad800339851f41ea5d779d300860b8a0c assets\elements\models\block\mulberry_fence_gate.json

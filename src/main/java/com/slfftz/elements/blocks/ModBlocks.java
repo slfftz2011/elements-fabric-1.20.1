@@ -141,7 +141,7 @@ public class ModBlocks {
     public static final Identifier MULBERRY_HANGING_SIGN_GUI = new Identifier(Elements.MOD_ID, "textures/gui/hanging_signs/mulberry");
 
     public static final Block MULBERRY_SIGN = register0("mulberry_sign",
-            new TerraformSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+            new TerraformSignBlock(MULBERRY_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
     public static final Block MULBERRY_WALL_SIGN = register0("mulberry_wall_sign",
             new TerraformWallSignBlock(MULBERRY_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
     public static final Block MULBERRY_HANGING_SIGN = register0("mulberry_hanging_sign",
