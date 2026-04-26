@@ -141,13 +141,13 @@ public class ModBlocks {
     public static final Identifier MULBERRY_HANGING_SIGN_GUI = new Identifier(Elements.MOD_ID, "textures/gui/hanging_signs/mulberry");
 
     public static final Block MULBERRY_SIGN = register0("mulberry_sign",
-            new TerraformSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, PLANKS));
+            new TerraformSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
     public static final Block MULBERRY_WALL_SIGN = register0("mulberry_wall_sign",
-            new TerraformWallSignBlock(MULBERRY_SIGN_TEXTURE, PLANKS));
+            new TerraformWallSignBlock(MULBERRY_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
     public static final Block MULBERRY_HANGING_SIGN = register0("mulberry_hanging_sign",
-            new TerraformHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, PLANKS));
+            new TerraformHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
     public static final Block MULBERRY_WALL_HANGING_SIGN = register0("mulberry_wall_hanging_sign",
-            new TerraformWallHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, PLANKS));
+            new TerraformWallHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
 
 
     public static Block register(String id, Block block) {

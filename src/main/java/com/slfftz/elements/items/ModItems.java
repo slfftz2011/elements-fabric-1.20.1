@@ -33,8 +33,11 @@ public class ModItems {
             new SignItem(new Item.Settings().maxCount(16), ModBlocks.MULBERRY_SIGN, ModBlocks.MULBERRY_WALL_SIGN),
             elements_mod_blocks
     );
-    public static final Item MULBERRY_HANGING_SIGN = registerItem("mulberry_hanging_sign",
-            new HangingSignItem(ModBlocks.MULBERRY_HANGING_SIGN,ModBlocks.MULBERRY_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
+    public static final Item MULBERRY_HANGING_SIGN = registerItem(
+            "mulberry_hanging_sign",
+            new HangingSignItem(ModBlocks.MULBERRY_HANGING_SIGN,ModBlocks.MULBERRY_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)),
+            elements_mod_blocks
+    );
 
 
     public static Item registerItem(String id) {

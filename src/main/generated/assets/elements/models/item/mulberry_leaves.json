@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "elements:block/mulberry_leaves"
-  }
+  "parent": "elements:block/mulberry_leaves"
 }

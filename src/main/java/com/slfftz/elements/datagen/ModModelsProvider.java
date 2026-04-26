@@ -39,7 +39,8 @@ public class ModModelsProvider extends FabricModelProvider {
                                 .family(family));
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_LEAVES, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MULBERRY_LEAVES);
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_MULBERRY_LOG, ModBlocks.MULBERRY_HANGING_SIGN, ModBlocks.MULBERRY_WALL_HANGING_SIGN);
     }
 
     public Identifier id(Block block) {
@@ -57,6 +58,5 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.AMBLYGONITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.LITHIUM_INGOT_BILLET, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.MULBERRY_HANGING_SIGN, Models.GENERATED);
     }
 }

@@ -25,7 +25,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.LITHIUM_INGOT))
                     .entries((displayContext, entries) -> {
                         for (Object entry : ModItems.elements_mod_items) {
-                            entries.add((ItemStack) entry);
+                            entries.add(new ItemStack((ItemConvertible) entry));
                         }
                     }).build());
 
@@ -37,7 +37,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModBlocks.LEPIDOLITE_BLOCK))
                     .entries((displayContext, entries) -> {
                         for (Object entry : ModItems.elements_mod_blocks) {
-                            entries.add((ItemStack) entry);
+                            entries.add(new ItemStack((ItemConvertible) entry));
                         }
                     }).build());
 

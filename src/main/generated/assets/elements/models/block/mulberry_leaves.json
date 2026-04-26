@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/tinted_cross",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "cross": "elements:block/mulberry_leaves"
+    "all": "elements:block/mulberry_leaves"
   }
 }
