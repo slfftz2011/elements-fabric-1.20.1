@@ -24,8 +24,8 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemGroup.elements_mod_items"))
                     .icon(() -> new ItemStack(ModItems.LITHIUM_INGOT))
                     .entries((displayContext, entries) -> {
-                        for (Item entry : ModItems.elements_mod_items) {
-                            entries.add(entry);
+                        for (Object entry : ModItems.elements_mod_items) {
+                            entries.add((ItemStack) entry);
                         }
                     }).build());
 
@@ -36,8 +36,8 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemGroup.elements_mod_blocks"))
                     .icon(() -> new ItemStack(ModBlocks.LEPIDOLITE_BLOCK))
                     .entries((displayContext, entries) -> {
-                        for (Block entry : ModItems.elements_mod_blocks) {
-                            entries.add(entry);
+                        for (Object entry : ModItems.elements_mod_blocks) {
+                            entries.add((ItemStack) entry);
                         }
                     }).build());
 

@@ -3,6 +3,11 @@ package com.slfftz.elements.blocks;
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.world.tree.MulberryGeneration;
+import com.terraformersmc.terraform.sign.TerraformHangingSign;
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -131,15 +136,23 @@ public class ModBlocks {
             FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
     ));
     // 告示牌 / 墙上的告示牌 / 悬挂式告示牌 / 墙上的悬挂式告示牌
-    public static final Block MULBERRY_SIGN = register("mulberry_sign", new SignBlock(PLANKS, WoodType.OAK));
-    public static final Block MULBERRY_WALL_SIGN = register0("mulberry_wall_sign", new WallSignBlock(PLANKS, WoodType.OAK));
-    public static final Block MULBERRY_HANGING_SIGN = register("mulberry_hanging_sign", new HangingSignBlock(PLANKS, WoodType.OAK));
-    public static final Block MULBERRY_WALL_HANGING_SIGN = register0("mulberry_wall_hanging_sign", new WallHangingSignBlock(PLANKS, WoodType.OAK));
+    public static final Identifier MULBERRY_SIGN_TEXTURE = new Identifier(Elements.MOD_ID, "entity/signs/mulberry");
+    public static final Identifier MULBERRY_HANGING_SIGN_TEXTURE = new Identifier(Elements.MOD_ID, "entity/signs/hanging/mulberry");
+    public static final Identifier MULBERRY_HANGING_SIGN_GUI = new Identifier(Elements.MOD_ID, "textures/gui/hanging_signs/mulberry");
+
+    public static final Block MULBERRY_SIGN = register0("mulberry_sign",
+            new TerraformSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, PLANKS));
+    public static final Block MULBERRY_WALL_SIGN = register0("mulberry_wall_sign",
+            new TerraformWallSignBlock(MULBERRY_SIGN_TEXTURE, PLANKS));
+    public static final Block MULBERRY_HANGING_SIGN = register0("mulberry_hanging_sign",
+            new TerraformHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, PLANKS));
+    public static final Block MULBERRY_WALL_HANGING_SIGN = register0("mulberry_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, PLANKS));
 
 
     public static Block register(String id, Block block) {
         registerBlockItems(id, block);
-        Block block_item = Registry.register(Registries.BLOCK, new Identifier(Elements.MOD_ID, id), block);
+        Block block_item = register0(id, block);
         ModItems.elements_mod_blocks.add(block_item);
         return block_item;
     }

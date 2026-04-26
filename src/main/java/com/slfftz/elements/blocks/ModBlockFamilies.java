@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class ModBlockFamilies {
-    private static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.<Block, BlockFamily>newHashMap();
+    private static final Map<Block, BlockFamily> BASE_BLOCKS_TO_FAMILIES = Maps.newHashMap();
 
     public static final BlockFamily MULBERRY = register(ModBlocks.MULBERRY_PLANKS)
             .stairs(ModBlocks.MULBERRY_STAIRS)
@@ -21,6 +21,8 @@ public class ModBlockFamilies {
             .door(ModBlocks.MULBERRY_DOOR)
             .trapdoor(ModBlocks.MULBERRY_TRAPDOOR)
             .sign(ModBlocks.MULBERRY_SIGN, ModBlocks.MULBERRY_WALL_SIGN)
+            .group("wooden")
+            .unlockCriterionName("has_planks")
             .build();
 
 
