@@ -4,7 +4,6 @@
     "elements:mulberry_log",
     "elements:mulberry_wood",
     "elements:stripped_mulberry_log",
-    "elements:stripped_mulberry_wood",
-    "elements:mulberry_planks"
+    "elements:stripped_mulberry_wood"
   ]
 }

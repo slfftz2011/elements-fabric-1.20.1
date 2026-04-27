@@ -47,6 +47,10 @@ public class ModLzhLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.MULBERRY_WOOD, "桑木");
         translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_LOG, "既扡桑樁");
         translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_WOOD, "既扡桑木");
+        translationBuilder.add("block.elements.mulberry_sign", "桑牌");
+        translationBuilder.add("block.elements.mulberry_hanging_sign", "桑懸牌");
+        translationBuilder.add("block.elements.mulberry_wall_sign", "壁桑牌");
+        translationBuilder.add("block.elements.mulberry_wall_hanging_sign", "壁桑懸牌");
 
         translationBuilder.add("itemGroup.elements_mod_items", "物於元質模組");
         translationBuilder.add("itemGroup.elements_mod_blocks","塊方於元質模組");

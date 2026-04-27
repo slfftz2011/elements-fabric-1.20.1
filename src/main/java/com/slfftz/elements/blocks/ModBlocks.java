@@ -140,12 +140,33 @@ public class ModBlocks {
 
     public static final Block MULBERRY_SIGN = register0("mulberry_sign",
             new TerraformSignBlock(MULBERRY_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
-    public static final Block MULBERRY_WALL_SIGN = register0("mulberry_wall_sign",
-            new TerraformWallSignBlock(MULBERRY_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+    public static final Block MULBERRY_WALL_SIGN = register0(
+            "mulberry_wall_sign", new TerraformWallSignBlock(
+                    MULBERRY_SIGN_TEXTURE,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.OAK_TAN)
+                            .solid()
+                            .instrument(Instrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .dropsLike(MULBERRY_SIGN)
+                            .burnable()
+    ));
     public static final Block MULBERRY_HANGING_SIGN = register0("mulberry_hanging_sign",
             new TerraformHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
-    public static final Block MULBERRY_WALL_HANGING_SIGN = register0("mulberry_wall_hanging_sign",
-            new TerraformWallHangingSignBlock(MULBERRY_HANGING_SIGN_TEXTURE, MULBERRY_HANGING_SIGN_GUI, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+    public static final Block MULBERRY_WALL_HANGING_SIGN = register0(
+            "mulberry_wall_hanging_sign", new TerraformWallHangingSignBlock(
+                    MULBERRY_HANGING_SIGN_TEXTURE,
+                    MULBERRY_HANGING_SIGN_GUI, AbstractBlock.Settings.create()
+                            .mapColor(MULBERRY_LOG.getDefaultMapColor())
+                            .solid()
+                            .instrument(Instrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable()
+                            .dropsLike(MULBERRY_HANGING_SIGN)
+            )
+    );
 
 
     public static Block register(String id, Block block) {

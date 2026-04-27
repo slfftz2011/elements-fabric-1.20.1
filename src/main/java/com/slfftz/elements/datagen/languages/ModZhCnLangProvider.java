@@ -47,6 +47,10 @@ public class ModZhCnLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.MULBERRY_WOOD, "桑木");
         translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_LOG, "去皮桑木原木");
         translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_WOOD, "去皮桑木");
+        translationBuilder.add("block.elements.mulberry_sign", "桑木告示牌");
+        translationBuilder.add("block.elements.mulberry_hanging_sign", "悬挂式桑木告示牌");
+        translationBuilder.add("block.elements.mulberry_wall_sign", "墙上的桑木告示牌");
+        translationBuilder.add("block.elements.mulberry_wall_hanging_sign", "墙上的悬挂式桑木告示牌");
 
         translationBuilder.add("itemGroup.elements_mod_items", "元素模组物品");
         translationBuilder.add("itemGroup.elements_mod_blocks","元素模组方块");

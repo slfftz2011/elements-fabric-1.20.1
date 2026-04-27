@@ -47,6 +47,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.MULBERRY_WOOD, "Mulberry Wood");
         translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_LOG, "Stripped Mulberry Log");
         translationBuilder.add(ModBlocks.STRIPPED_MULBERRY_WOOD, "Stripped Mulberry Wood");
+        translationBuilder.add("block.elements.mulberry_sign", "Mulberry Sign");
+        translationBuilder.add("block.elements.mulberry_hanging_sign", "Mulberry Hanging Sign");
+        translationBuilder.add("block.elements.mulberry_wall_sign", "Mulberry Wall Sign");
+        translationBuilder.add("block.elements.mulberry_wall_hanging_sign", "Mulberry Wall Hanging Sign");
 
 
         translationBuilder.add("itemGroup.elements_mod_items", "Elements Mod Items");

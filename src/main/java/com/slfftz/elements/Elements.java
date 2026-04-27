@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class Elements implements ModInitializer {
     public static final String MOD_ID = "elements";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER = LoggerFactory.getLogger("Elements");
 
     @Override
     public void onInitialize() {
