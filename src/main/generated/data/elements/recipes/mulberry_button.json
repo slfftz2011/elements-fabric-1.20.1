@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "elements:mulberry_planks"
+    }
+  ],
+  "result": {
+    "item": "elements:mulberry_button"
+  }
+}

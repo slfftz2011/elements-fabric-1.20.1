@@ -105,6 +105,6 @@ Except where otherwise stated, the content of this repository is provided under 
 ##### 看不懂用翻译哦QwQ 
 - 开学了，www TwT -- 25/9/9 21:57
 
-3. 配方
-4. 翻译
+
 5. 门朝向
+6. 烧

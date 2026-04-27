@@ -5,6 +5,8 @@ import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.blocks.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -80,5 +82,130 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .input('@', Items.WATER_BUCKET)
                 .criterion(hasItem(ModItems.LITHIUM_ORE_POWDER), conditionsFromItem(ModItems.LITHIUM_ORE_POWDER))
                 .offerTo(exporter, new Identifier(Elements.MOD_ID, "lithium_powder_from_lithium_ore_powder_crafting_with_water_bucket"));
+
+
+        // 原木 → 木板
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_PLANKS, 4)
+                .input(ModBlocks.MULBERRY_LOG)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_planks_from_log"));
+
+        // 木头 → 木板
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_PLANKS, 4)
+                .input(ModBlocks.MULBERRY_WOOD)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_planks_from_wood"));
+
+        // 去皮原木 → 木板
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_MULBERRY_LOG)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_planks_from_stripped_log"));
+
+        // 去皮木头 → 木板
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_MULBERRY_WOOD)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_planks_from_stripped_wood"));
+
+        // 木头
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_WOOD)
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.MULBERRY_LOG)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_wood"));
+
+        // 去皮木头
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_MULBERRY_LOG)
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.STRIPPED_MULBERRY_LOG)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "stripped_mulberry_wood"));
+
+        // 木板 → 楼梯
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_STAIRS, 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_stairs"));
+
+        // 木板 → 台阶
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_SLAB, 6)
+                .pattern("###")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_slab"));
+
+        // 栅栏
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MULBERRY_FENCE, 3)
+                .pattern("#W#")
+                .pattern("#W#")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .input('W', Items.STICK)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_fence"));
+
+        // 栅栏门
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.MULBERRY_FENCE_GATE)
+                .pattern("W#W")
+                .pattern("W#W")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .input('W', Items.STICK)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_fence_gate"));
+
+        // 门
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.MULBERRY_DOOR, 3)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_door"));
+
+        // 活板门
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.MULBERRY_TRAPDOOR, 2)
+                .pattern("###")
+                .pattern("###")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_trapdoor"));
+
+        // 按钮
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.MULBERRY_BUTTON)
+                .input(ModBlocks.MULBERRY_PLANKS)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_button"));
+
+        // 压力板
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.MULBERRY_PRESSURE_PLATE)
+                .pattern("##")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_pressure_plate"));
+
+        // 告示牌
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.MULBERRY_SIGN, 3)
+                .pattern("###")
+                .pattern("###")
+                .pattern(" W ")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .input('W', Items.STICK)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_sign"));
+
+        // 悬挂式告示牌
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.MULBERRY_SIGN, 6)
+                .pattern("W W")
+                .pattern("###")
+                .pattern("###")
+                .input('#', ModBlocks.MULBERRY_PLANKS)
+                .input('W', Blocks.CHAIN)
+                .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
+                .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_hanging_sign"));
     }
 }

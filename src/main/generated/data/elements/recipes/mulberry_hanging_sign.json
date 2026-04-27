@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "elements:mulberry_planks"
+    },
+    "W": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "W W",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "elements:mulberry_sign"
+  },
+  "show_notification": true
+}
