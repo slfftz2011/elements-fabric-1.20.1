@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-26T22:33:57.3964696	Elements/Block Loot Tables
+// 1.20.1	2026-04-27T19:36:49.7349703	Elements/Block Loot Tables
 175a19914fdf1de14ec2501aca8a8f9c682c1f54 data\elements\loot_tables\blocks\stripped_mulberry_log.json
 280df1cd0eadc306bd9de736f72874110530e94b data\elements\loot_tables\blocks\amblygonite_block.json
 97b1f2c55042f010641254faab64c121ff156352 data\elements\loot_tables\blocks\lepidolite_block.json
@@ -13,7 +13,7 @@ c89d10a70b220292423947d1cb512a5173874889 data\elements\loot_tables\blocks\mulber
 56ede196a63481bf42d9ef70c9b0c271bbcc196f data\elements\loot_tables\blocks\mulberry_door.json
 d53563f2dc0bcb5e44274c8e24c748b055d95459 data\elements\loot_tables\blocks\amblygonite_ore.json
 041ecf094328928132d2295218ab3fa76e94c6b4 data\elements\loot_tables\blocks\mulberry_fence.json
-284cf404f862f18236e0ec79d8b5898cc073e8c7 data\elements\loot_tables\blocks\mulberry_wall_sign.json
+334822193518c5bd12ace44751e5edaea7617356 data\elements\loot_tables\blocks\mulberry_hanging_sign.json
 577d48c0641f21e951ee9e4a3289cc1b4b70c1c3 data\elements\loot_tables\blocks\lepidolite_ore.json
 00fd707cc323ceafcb5ab3315bc59bcd8dbf3bd8 data\elements\loot_tables\blocks\mulberry_wood.json
 4baed1f8ff54518aafaa068d6d98b2682c6e571e data\elements\loot_tables\blocks\mulberry_trapdoor.json

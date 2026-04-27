@@ -25,6 +25,13 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.SPODUMENE_BLOCK)
                 .add(ModBlocks.AMBLYGONITE_BLOCK);
 
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.MULBERRY_LOG)
+                .add(ModBlocks.MULBERRY_WOOD)
+                .add(ModBlocks.STRIPPED_MULBERRY_LOG)
+                .add(ModBlocks.STRIPPED_MULBERRY_WOOD)
+                .add(ModBlocks.MULBERRY_PLANKS);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.SPODUMENE_ORE)
                 .add(ModBlocks.AMBLYGONITE_ORE)
@@ -36,5 +43,11 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.LEPIDOLITE_ORE)
                 .add(ModBlocks.LEPIDOLITE_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.MULBERRY_LOG)
+                .add(ModBlocks.MULBERRY_WOOD)
+                .add(ModBlocks.STRIPPED_MULBERRY_LOG)
+                .add(ModBlocks.STRIPPED_MULBERRY_WOOD);
     }
 }

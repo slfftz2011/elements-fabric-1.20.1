@@ -1,5 +1,6 @@
 package com.slfftz.elements.datagen;
 
+import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -15,6 +16,19 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.MULBERRY_PLANKS.asItem());
 
+        getOrCreateTagBuilder(ItemTags.LOGS)
+                .add(ModBlocks.MULBERRY_LOG.asItem())
+                .add(ModBlocks.STRIPPED_MULBERRY_LOG.asItem())
+                .add(ModBlocks.MULBERRY_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_MULBERRY_WOOD.asItem());
+
+        getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.MULBERRY_LOG.asItem())
+                .add(ModBlocks.STRIPPED_MULBERRY_LOG.asItem())
+                .add(ModBlocks.MULBERRY_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_MULBERRY_WOOD.asItem());
     }
 }
