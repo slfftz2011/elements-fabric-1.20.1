@@ -5,6 +5,7 @@ import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.items.ModItemGroups;
 import com.slfftz.elements.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -9,6 +9,7 @@ import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
@@ -201,6 +202,24 @@ public class ModBlocks {
         FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_FENCE, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_FENCE_GATE, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(MULBERRY_LEAVES, 30, 60);
+
+        // 燃烧效率注册
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_PLANKS.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_LOG.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_WOOD.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.STRIPPED_MULBERRY_LOG.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.STRIPPED_MULBERRY_WOOD.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_STAIRS.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_SLAB.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_FENCE.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_FENCE_GATE.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_DOOR.asItem(), 200);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_TRAPDOOR.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_BUTTON.asItem(), 100);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_PRESSURE_PLATE.asItem(), 300);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_SAPLING.asItem(), 100);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_SIGN.asItem(), 200);
+        FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_HANGING_SIGN.asItem(), 800);
     }
 
     public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
