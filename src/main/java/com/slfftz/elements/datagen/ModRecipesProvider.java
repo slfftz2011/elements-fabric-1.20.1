@@ -5,14 +5,12 @@ import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.blocks.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
@@ -124,7 +122,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
                 .offerTo(exporter, new Identifier(Elements.MOD_ID, "stripped_mulberry_wood"));
 
-        // 木板 → 楼梯
+        // 楼梯
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_STAIRS, 4)
                 .pattern("#  ")
                 .pattern("## ")
@@ -133,7 +131,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.MULBERRY_LOG), conditionsFromItem(ModBlocks.MULBERRY_LOG))
                 .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_stairs"));
 
-        // 木板 → 台阶
+        // 台阶
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MULBERRY_SLAB, 6)
                 .pattern("###")
                 .input('#', ModBlocks.MULBERRY_PLANKS)
@@ -199,7 +197,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(Elements.MOD_ID, "mulberry_sign"));
 
         // 悬挂式告示牌
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.MULBERRY_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.MULBERRY_HANGING_SIGN, 6)
                 .pattern("W W")
                 .pattern("###")
                 .pattern("###")
