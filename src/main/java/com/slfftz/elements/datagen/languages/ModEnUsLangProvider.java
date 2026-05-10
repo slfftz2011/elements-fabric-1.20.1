@@ -23,6 +23,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.AMBLYGONITE, "Amblygonite");
         translationBuilder.add(ModItems.LITHIUM_INGOT_BILLET, "Lithium Billet");
 
+        translationBuilder.add(ModItems.MULBERRY_BOAT, "Mulberry Boat");
+        translationBuilder.add(ModItems.MULBERRY_CHEST_BOAT, "Mulberry Boat with Chest");
+
         translationBuilder.add(ModBlocks.SPODUMENE_ORE, "Spodumene Ore");
         translationBuilder.add(ModBlocks.AMBLYGONITE_ORE, "Amblygonite Ore");
         translationBuilder.add(ModBlocks.LEPIDOLITE_ORE, "Lepidolite Ore");
@@ -51,7 +54,6 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.elements.mulberry_hanging_sign", "Mulberry Hanging Sign");
         translationBuilder.add("block.elements.mulberry_wall_sign", "Mulberry Wall Sign");
         translationBuilder.add("block.elements.mulberry_wall_hanging_sign", "Mulberry Wall Hanging Sign");
-
 
         translationBuilder.add("itemGroup.elements_mod_items", "Elements Mod Items");
         translationBuilder.add("itemGroup.elements_mod_blocks","Elements Mod Blocks");

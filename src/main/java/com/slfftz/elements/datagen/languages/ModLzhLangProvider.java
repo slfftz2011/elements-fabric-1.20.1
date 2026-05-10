@@ -23,6 +23,9 @@ public class ModLzhLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.AMBLYGONITE, "鋰磷鋁石");
         translationBuilder.add(ModItems.LITHIUM_INGOT_BILLET, "毛鋰");
 
+        translationBuilder.add(ModItems.MULBERRY_BOAT, "桑舟");
+        translationBuilder.add(ModItems.MULBERRY_CHEST_BOAT, "桑艚");
+
         translationBuilder.add(ModBlocks.SPODUMENE_ORE, "鋰輝石礦");
         translationBuilder.add(ModBlocks.AMBLYGONITE_ORE, "鋰磷鋁石礦");
         translationBuilder.add(ModBlocks.LEPIDOLITE_ORE, "鋰雲母礦");

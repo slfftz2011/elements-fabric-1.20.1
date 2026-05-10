@@ -2,7 +2,9 @@ package com.slfftz.elements.items;
 
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlocks;
-import net.minecraft.block.Block;
+import com.slfftz.elements.entities.ModBoats;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SignItem;
@@ -12,7 +14,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ModItems {
     public static List<Object> elements_mod_items = new ArrayList<>();
@@ -39,6 +40,13 @@ public class ModItems {
             elements_mod_blocks
     );
 
+    public static final Item MULBERRY_BOAT = TerraformBoatItemHelper.registerBoatItem(
+            ModBoats.MULBERRY_BOAT, ModBoats.MULBERRY_BOAT_KEY, false
+    );
+    public static final Item MULBERRY_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(
+            ModBoats.MULBERRY_CHEST_BOAT, ModBoats.MULBERRY_BOAT_KEY, true
+    );
+
 
     public static Item registerItem(String id) {
         Item item = registerItem(id, new Item.Settings());
@@ -63,7 +71,8 @@ public class ModItems {
 
 
     public static void registerModItems() {
-
+        FuelRegistry.INSTANCE.add(ModItems.MULBERRY_BOAT, 1200);
+        FuelRegistry.INSTANCE.add(ModItems.MULBERRY_CHEST_BOAT, 1200);
     }
 }
 

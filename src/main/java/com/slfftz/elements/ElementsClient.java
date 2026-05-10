@@ -1,6 +1,8 @@
 package com.slfftz.elements;
 
 import com.slfftz.elements.blocks.ModBlocks;
+import com.slfftz.elements.entities.ModBoats;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -23,5 +25,7 @@ public class ElementsClient implements ClientModInitializer {
                 (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getFoliageColor(view, pos) : FoliageColors.getDefaultColor(),
                 ModBlocks.MULBERRY_LEAVES
         );
+
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.MULBERRY_BOAT, false);
     }
 }

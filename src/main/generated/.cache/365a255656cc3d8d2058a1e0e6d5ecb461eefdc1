@@ -1,8 +1,8 @@
-// 1.20.1	2026-05-10T19:04:03.2667729	Elements/Tags for minecraft:block
+// 1.20.1	2026-05-10T21:32:48.7494027	Elements/Tags for minecraft:block
 fd61b1751a34ec878f680e3c56be472c6a6c040b data\minecraft\tags\blocks\saplings.json
 a8a1fc4de74df2cfc25fae8be4a753426713b9fd data\minecraft\tags\blocks\wooden_doors.json
-9b50e62d7fd71ddf5c0f7c1c8a7ed2b302ae61b8 data\minecraft\tags\blocks\mineable\pickaxe.json
 c40f354185a7ebee82b4087b3e2afb37fab0083e data\minecraft\tags\blocks\needs_stone_tool.json
+9b50e62d7fd71ddf5c0f7c1c8a7ed2b302ae61b8 data\minecraft\tags\blocks\mineable\pickaxe.json
 ca40aeece5dc5876e6a1679151584e35aa598c1b data\minecraft\tags\blocks\fence_gates.json
 f882229bcbf4f348be691d5896757a5e40dd3fca data\minecraft\tags\blocks\wooden_slabs.json
 153086219cf0d483631086928a0d15c837faa0c6 data\minecraft\tags\blocks\signs.json

@@ -59,5 +59,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.AMBLYGONITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.LITHIUM_INGOT_BILLET, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.MULBERRY_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MULBERRY_CHEST_BOAT, Models.GENERATED);
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-10T19:04:03.2657655	Elements/Recipes
+// 1.20.1	2026-05-10T21:32:48.7480402	Elements/Recipes
 6387c78ef3654279e52f7620f653ee18386a086c data\elements\recipes\mulberry_button.json
 14e237ff334479cfdb852d4cc7ccaf5f9a1cd88e data\elements\advancements\recipes\redstone\mulberry_pressure_plate.json
 551c64ed5a2a53a56cd99e2e2a3c69e6f216baea data\elements\advancements\recipes\misc\mulberry_hanging_sign.json
@@ -36,8 +36,8 @@ eba27c334a881226baa2095d229e6f86016e4216 data\elements\recipes\mulberry_hanging_
 68b4630fca18a45d2e41d74986d4df3b3aee667c data\elements\advancements\recipes\building_blocks\mulberry_wood.json
 41f3f8a4f19e699faaea1676d185b3bf972c32fc data\elements\recipes\lithium_powder_from_blasting_deepslate_amblygonite_ore.json
 198b7444a70db996dd365ddbe6c734f7f3f798f7 data\elements\recipes\mulberry_fence.json
-8ddf32073c352a9ef85dbdae82339721bf046780 data\elements\recipes\mulberry_door.json
 b71dae44b17bd00699838fac87a44a4a27f60b8a data\elements\advancements\recipes\redstone\mulberry_button.json
+8ddf32073c352a9ef85dbdae82339721bf046780 data\elements\recipes\mulberry_door.json
 748631546df87a80330f3dd47219a70d4b23c248 data\elements\recipes\mulberry_planks_from_stripped_wood.json
 605503a260730d6eb2906ec85015f733702db863 data\elements\recipes\lithium_ingot_from_smelting_lithium_ingot_billet.json
 4ea272874cd90214bef608a1fd4a189c7c5ff383 data\elements\recipes\amblygonite.json
