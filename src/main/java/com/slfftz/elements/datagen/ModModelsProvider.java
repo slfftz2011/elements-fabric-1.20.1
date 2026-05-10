@@ -39,7 +39,8 @@ public class ModModelsProvider extends FabricModelProvider {
                                 .family(family));
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MULBERRY_LEAVES);
+        // 改手写
+        // blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MULBERRY_LEAVES);
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_MULBERRY_LOG, ModBlocks.MULBERRY_HANGING_SIGN, ModBlocks.MULBERRY_WALL_HANGING_SIGN);
     }
 
