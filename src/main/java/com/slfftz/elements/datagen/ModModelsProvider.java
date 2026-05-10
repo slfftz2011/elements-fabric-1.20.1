@@ -1,22 +1,29 @@
 package com.slfftz.elements.datagen;
 
+import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlockFamilies;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.blocks.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public class ModModelsProvider extends FabricModelProvider {
     public ModModelsProvider(FabricDataOutput output) {
         super(output);
     }
+
+    public static final Model LEAVES_MODEL = new Model(
+            Optional.ofNullable(Identifier.of("minecraft","block/leaves")),
+            Optional.empty(),
+            TextureKey.ALL
+    );
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -39,8 +46,12 @@ public class ModModelsProvider extends FabricModelProvider {
                                 .family(family));
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        // 改手写
-        // blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MULBERRY_LEAVES);
+        final Identifier mulberryLeavesModelId = LEAVES_MODEL.upload(
+                ModBlocks.MULBERRY_LEAVES,
+                TextureMap.all(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves")),
+                blockStateModelGenerator.modelCollector
+        );
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.MULBERRY_LEAVES, mulberryLeavesModelId);
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_MULBERRY_LOG, ModBlocks.MULBERRY_HANGING_SIGN, ModBlocks.MULBERRY_WALL_HANGING_SIGN);
     }
 
