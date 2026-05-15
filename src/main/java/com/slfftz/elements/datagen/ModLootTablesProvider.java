@@ -7,11 +7,16 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 public class ModLootTablesProvider extends FabricBlockLootTableProvider {
@@ -45,7 +50,7 @@ public class ModLootTablesProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MULBERRY_BUTTON);
         addDrop(ModBlocks.MULBERRY_PRESSURE_PLATE);
         addDrop(ModBlocks.MULBERRY_SAPLING);
-        addDrop(ModBlocks.MULBERRY_LEAVES, leavesDrops(ModBlocks.MULBERRY_LEAVES, ModBlocks.MULBERRY_SAPLING, 0.05F, 0.0625F, 0.083333336F, 0.1F));
+        addDrop(ModBlocks.MULBERRY_LEAVES, bearingLeavesDrops(ModBlocks.MULBERRY_LEAVES, ModBlocks.MULBERRY_SAPLING, 0.05F, 0.0625F, 0.083333336F, 0.1F));
         addDrop(ModBlocks.MULBERRY_SIGN);
         addDrop(ModBlocks.MULBERRY_HANGING_SIGN);
     }
@@ -60,5 +65,17 @@ public class ModLootTablesProvider extends FabricBlockLootTableProvider {
                                 .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))
                 )
         );
+    }
+    public LootTable.Builder bearingLeavesDrops(Block leaves, Block drop, float... chance) {
+        return this.leavesDrops(leaves, drop, chance)
+                .pool(
+                        LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .conditionally(WITHOUT_SILK_TOUCH_NOR_SHEARS)
+                                .with(
+                                        ((LeafEntry.Builder<?>)this.addSurvivesExplosionCondition(leaves, ItemEntry.builder(ModItems.MULBERRY)))
+                                                .conditionally(TableBonusLootCondition.builder(Enchantments.FORTUNE, 0.02F, 0.04F, 0.06F, 0.1F, 0.3F))
+                                )
+                );
     }
 }
