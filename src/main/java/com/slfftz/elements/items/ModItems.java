@@ -47,6 +47,8 @@ public class ModItems {
             ModBoats.MULBERRY_CHEST_BOAT, ModBoats.MULBERRY_BOAT_KEY, true
     );
 
+    public static final Item MULBERRY = registerItem("mulberry", new Item(new Item.Settings().maxCount(128).food(ModFoodComponents.MULBERRY)));
+
 
     public static Item registerItem(String id) {
         Item item = registerItem(id, new Item.Settings());
