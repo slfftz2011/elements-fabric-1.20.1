@@ -79,5 +79,6 @@ public class ModModelsProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.MULBERRY_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.MULBERRY_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MULBERRY, Models.GENERATED);
     }
 }
