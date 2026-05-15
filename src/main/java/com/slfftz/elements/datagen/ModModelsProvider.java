@@ -38,6 +38,9 @@ public class ModModelsProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerLog(ModBlocks.MULBERRY_LOG).log(ModBlocks.MULBERRY_LOG).wood(ModBlocks.MULBERRY_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_MULBERRY_LOG).log(ModBlocks.STRIPPED_MULBERRY_LOG).wood(ModBlocks.STRIPPED_MULBERRY_WOOD);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_MULBERRY_LOG, ModBlocks.MULBERRY_HANGING_SIGN, ModBlocks.MULBERRY_WALL_HANGING_SIGN);
+
         ModBlockFamilies.getFamilies()
                 .filter(BlockFamily::shouldGenerateModels)
                 .forEach(family ->
@@ -45,14 +48,18 @@ public class ModModelsProvider extends FabricModelProvider {
                                 registerCubeAllModelTexturePool(family.getBaseBlock())
                                 .family(family));
 
-        blockStateModelGenerator.registerTintableCross(ModBlocks.MULBERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         final Identifier mulberryLeavesModelId = LEAVES_MODEL.upload(
                 ModBlocks.MULBERRY_LEAVES,
                 TextureMap.all(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves")),
                 blockStateModelGenerator.modelCollector
         );
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.MULBERRY_LEAVES, mulberryLeavesModelId);
-        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_MULBERRY_LOG, ModBlocks.MULBERRY_HANGING_SIGN, ModBlocks.MULBERRY_WALL_HANGING_SIGN);
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.MULBERRY_LEAVES,
+                        mulberryLeavesModelId
+                )
+        );
     }
 
     public Identifier id(Block block) {

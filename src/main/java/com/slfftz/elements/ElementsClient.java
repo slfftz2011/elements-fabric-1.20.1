@@ -25,6 +25,10 @@ public class ElementsClient implements ClientModInitializer {
                 (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getFoliageColor(view, pos) : FoliageColors.getDefaultColor(),
                 ModBlocks.MULBERRY_LEAVES
         );
+        ColorProviderRegistry.ITEM.register(
+                (stack, count) -> 4764952,
+                ModBlocks.MULBERRY_LEAVES.asItem()
+        );
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.MULBERRY_BOAT, false);
     }

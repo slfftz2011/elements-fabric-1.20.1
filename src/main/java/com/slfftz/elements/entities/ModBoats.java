@@ -16,12 +16,12 @@ public class ModBoats {
     public static final RegistryKey<TerraformBoatType> MULBERRY_BOAT_KEY = TerraformBoatTypeRegistry.createKey(MULBERRY_BOAT);
 
     public static void registerBoats(){
-        TerraformBoatType ICE_ETHER_BOAT_TYPE = new TerraformBoatType.Builder()
+        TerraformBoatType MULBERRY_BOAT_TYPE = new TerraformBoatType.Builder()
                 .item(ModItems.MULBERRY_BOAT)
                 .chestItem(ModItems.MULBERRY_CHEST_BOAT)
                 .planks(ModBlocks.MULBERRY_PLANKS.asItem())
                 .build();
 
-        Registry.register(TerraformBoatTypeRegistry.INSTANCE, MULBERRY_BOAT_KEY, ICE_ETHER_BOAT_TYPE);
+        Registry.register(TerraformBoatTypeRegistry.INSTANCE, MULBERRY_BOAT_KEY, MULBERRY_BOAT_TYPE);
     }
 }

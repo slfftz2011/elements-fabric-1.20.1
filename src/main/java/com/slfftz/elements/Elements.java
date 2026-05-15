@@ -1,6 +1,7 @@
 package com.slfftz.elements;
 
 import com.slfftz.elements.blocks.ModBlocks;
+import com.slfftz.elements.entities.ModBoats;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.items.ModItemGroups;
 import com.slfftz.elements.world.ModWorldGeneration;
@@ -18,6 +19,7 @@ public class Elements implements ModInitializer {
         ModBlocks.registerModBlocks();
         ModItemGroups.registerGroups();
         ModWorldGeneration.register();
+        ModBoats.registerBoats();
         LOGGER.info("The elemental world is ready, let's start your adventure!");
     }
 }
