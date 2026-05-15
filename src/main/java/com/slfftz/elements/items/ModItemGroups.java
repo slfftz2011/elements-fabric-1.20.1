@@ -27,6 +27,8 @@ public class ModItemGroups {
                         for (Object entry : ModItems.elements_mod_items) {
                             entries.add(new ItemStack((ItemConvertible) entry));
                         }
+                        entries.add(ModItems.MULBERRY_BOAT);
+                        entries.add(ModItems.MULBERRY_CHEST_BOAT);
                     }).build());
 
     public static final ItemGroup ELEMENTS_MOD_BLOCKS = Registry.register(

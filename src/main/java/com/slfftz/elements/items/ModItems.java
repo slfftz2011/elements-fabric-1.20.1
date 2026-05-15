@@ -19,15 +19,15 @@ public class ModItems {
     public static List<Object> elements_mod_items = new ArrayList<>();
     public static List<Object> elements_mod_blocks = new ArrayList<>();
 
+    public static final Item LITHIUM_BATTERY = registerItem("lithium_battery");
     public static final Item LITHIUM_INGOT = registerItem("lithium_ingot");
     public static final Item LITHIUM_ORE_POWDER = registerItem("lithium_ore_powder");
-    public static final Item LEPIDOLITE_SHARD = registerItem("lepidolite_shard");
     public static final Item LITHIUM_POWDER = registerItem("lithium_powder");
-    public static final Item LITHIUM_BATTERY = registerItem("lithium_battery");
+    public static final Item LITHIUM_INGOT_BILLET = registerItem("lithium_ingot_billet");
     public static final Item IMPURITY = registerItem("impurity");
     public static final Item SPODUMENE = registerItem("spodumene");
     public static final Item AMBLYGONITE = registerItem("amblygonite");
-    public static final Item LITHIUM_INGOT_BILLET = registerItem("lithium_ingot_billet");
+    public static final Item LEPIDOLITE_SHARD = registerItem("lepidolite_shard");
 
     public static final Item MULBERRY_SIGN = registerItem(
             "mulberry_sign",
