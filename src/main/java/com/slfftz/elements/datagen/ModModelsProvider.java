@@ -2,14 +2,17 @@ package com.slfftz.elements.datagen;
 
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlockFamilies;
+import com.slfftz.elements.blocks.MulberryLeavesBlock;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.blocks.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.Registries;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 
 import java.util.Optional;
@@ -48,18 +51,59 @@ public class ModModelsProvider extends FabricModelProvider {
                                 registerCubeAllModelTexturePool(family.getBaseBlock())
                                 .family(family));
 
-        final Identifier mulberryLeavesModelId = LEAVES_MODEL.upload(
+        Identifier mulberryLeavesModelId = LEAVES_MODEL.upload(
                 ModBlocks.MULBERRY_LEAVES,
                 TextureMap.all(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves")),
                 blockStateModelGenerator.modelCollector
         );
+        Identifier mulberryLeavesModelId1 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_1");
+        Identifier mulberryLeavesModelId2 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_2");
+        Identifier mulberryLeavesModelId3 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_3");
+        Identifier mulberryLeavesModelId4 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_4");
+        Identifier mulberryLeavesModelId5 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_5");
+        Identifier mulberryLeavesModelId6 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_6");
+        Identifier mulberryLeavesModelId7 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_7");
+        Identifier mulberryLeavesModelId8 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_8");
+        Identifier mulberryLeavesModelId9 = ModelIds.getBlockSubModelId(ModBlocks.MULBERRY_LEAVES, "_stage_9");
+        blockStateModelGenerator.blockStateCollector
+                .accept(
+                        MultipartBlockStateSupplier.create(ModBlocks.MULBERRY_LEAVES)
+                                .with(BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId))
+                                .with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 1),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId1)
+                                )
+                                .with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 2),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId2)
+                                )
+                                .with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 3),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId3)
+                                )
+                                .with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 4),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId4)
+                                )
+                                .with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 5),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId5)
+                                )
+                                .with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 6),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId6)
+                                ).with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 7),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId7)
+                                ).with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 8),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId8)
+                                ).with(
+                                        When.create().set(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE, 9),
+                                        BlockStateVariant.create().put(VariantSettings.MODEL, mulberryLeavesModelId9)
+                                )
+                );
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.MULBERRY_LEAVES, mulberryLeavesModelId);
-        blockStateModelGenerator.blockStateCollector.accept(
-                BlockStateModelGenerator.createSingletonBlockState(
-                        ModBlocks.MULBERRY_LEAVES,
-                        mulberryLeavesModelId
-                )
-        );
     }
 
     public Identifier id(Block block) {

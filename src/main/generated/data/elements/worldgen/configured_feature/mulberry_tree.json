@@ -21,7 +21,8 @@
         "Properties": {
           "distance": "7",
           "persistent": "false",
-          "waterlogged": "false"
+          "silkworm_growth_stage": "0",
+          "waterlogged": "true"
         }
       }
     },

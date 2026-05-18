@@ -1,7 +1,81 @@
 {
-  "variants": {
-    "": {
-      "model": "elements:block/mulberry_leaves"
+  "multipart": [
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_1"
+      },
+      "when": {
+        "silkworm_growth_stage": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_2"
+      },
+      "when": {
+        "silkworm_growth_stage": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_3"
+      },
+      "when": {
+        "silkworm_growth_stage": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_4"
+      },
+      "when": {
+        "silkworm_growth_stage": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_5"
+      },
+      "when": {
+        "silkworm_growth_stage": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_6"
+      },
+      "when": {
+        "silkworm_growth_stage": "6"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_7"
+      },
+      "when": {
+        "silkworm_growth_stage": "7"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_8"
+      },
+      "when": {
+        "silkworm_growth_stage": "8"
+      }
+    },
+    {
+      "apply": {
+        "model": "elements:block/mulberry_leaves_stage_9"
+      },
+      "when": {
+        "silkworm_growth_stage": "9"
+      }
     }
-  }
+  ]
 }
