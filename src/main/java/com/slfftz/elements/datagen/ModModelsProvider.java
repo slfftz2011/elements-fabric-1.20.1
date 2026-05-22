@@ -69,7 +69,14 @@ public class ModModelsProvider extends FabricModelProvider {
                             return BlockStateVariant.create().put(VariantSettings.MODEL, identifier);
                         }
                 );
-        blockStateModelGenerator.registerItemModel(ModBlocks.MULBERRY_LEAVES.asItem());
+
+        Identifier mulberryLeavesModelId = LEAVES_MODEL.upload(
+                ModBlocks.MULBERRY_LEAVES,
+                TextureMap.all(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves_stage_0")),
+                blockStateModelGenerator.modelCollector
+        );
+
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.MULBERRY_LEAVES, mulberryLeavesModelId);
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.MULBERRY_LEAVES).coordinate(blockStateVariantMap));
 
     }
