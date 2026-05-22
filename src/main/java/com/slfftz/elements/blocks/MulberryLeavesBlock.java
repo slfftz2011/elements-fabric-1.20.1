@@ -16,7 +16,8 @@ public class MulberryLeavesBlock extends LeavesBlock {
         this.setDefaultState(this.getStateManager().getDefaultState()
                 .with(SILKWORM_GROWTH_STAGE, 0)
                 .with(PERSISTENT, false)
-                .with(DISTANCE, 7));
+                .with(DISTANCE, 7)
+                .with(WATERLOGGED, false));
     }
 
     @Override
@@ -27,7 +28,7 @@ public class MulberryLeavesBlock extends LeavesBlock {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(SILKWORM_GROWTH_STAGE, 0);
+        return this.getDefaultState().with(SILKWORM_GROWTH_STAGE, 0).with(PERSISTENT, true);
     }
 
     public static void setSilkwormStage(World world, BlockPos pos, int stage) {
@@ -35,9 +36,12 @@ public class MulberryLeavesBlock extends LeavesBlock {
         BlockState state = world.getBlockState(pos);
         if (state.getBlock() instanceof MulberryLeavesBlock) {
             int clampedStage = Math.max(0, Math.min(9, stage));
-            world.setBlockState(pos, state.with(SILKWORM_GROWTH_STAGE, clampedStage));
+            world.setBlockState(pos, state
+                    .with(SILKWORM_GROWTH_STAGE, clampedStage)
+                    .with(PERSISTENT, clampedStage > 0));
         }
     }
+
 
     public static int getSilkwormStage(BlockState state) {
         return state.get(SILKWORM_GROWTH_STAGE);
