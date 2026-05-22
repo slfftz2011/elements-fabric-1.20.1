@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "elements:block/mulberry_leaves_stage_2"
+  }
+}

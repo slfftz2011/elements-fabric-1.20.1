@@ -1,81 +1,34 @@
 {
-  "multipart": [
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves"
-      }
+  "variants": {
+    "silkworm_growth_stage=0": {
+      "model": "elements:block/mulberry_leaves_stage_0"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_1"
-      },
-      "when": {
-        "silkworm_growth_stage": "1"
-      }
+    "silkworm_growth_stage=1": {
+      "model": "elements:block/mulberry_leaves_stage_1"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_2"
-      },
-      "when": {
-        "silkworm_growth_stage": "2"
-      }
+    "silkworm_growth_stage=2": {
+      "model": "elements:block/mulberry_leaves_stage_2"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_3"
-      },
-      "when": {
-        "silkworm_growth_stage": "3"
-      }
+    "silkworm_growth_stage=3": {
+      "model": "elements:block/mulberry_leaves_stage_3"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_4"
-      },
-      "when": {
-        "silkworm_growth_stage": "4"
-      }
+    "silkworm_growth_stage=4": {
+      "model": "elements:block/mulberry_leaves_stage_4"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_5"
-      },
-      "when": {
-        "silkworm_growth_stage": "5"
-      }
+    "silkworm_growth_stage=5": {
+      "model": "elements:block/mulberry_leaves_stage_5"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_6"
-      },
-      "when": {
-        "silkworm_growth_stage": "6"
-      }
+    "silkworm_growth_stage=6": {
+      "model": "elements:block/mulberry_leaves_stage_6"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_7"
-      },
-      "when": {
-        "silkworm_growth_stage": "7"
-      }
+    "silkworm_growth_stage=7": {
+      "model": "elements:block/mulberry_leaves_stage_7"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_8"
-      },
-      "when": {
-        "silkworm_growth_stage": "8"
-      }
+    "silkworm_growth_stage=8": {
+      "model": "elements:block/mulberry_leaves_stage_8"
     },
-    {
-      "apply": {
-        "model": "elements:block/mulberry_leaves_stage_9"
-      },
-      "when": {
-        "silkworm_growth_stage": "9"
-      }
+    "silkworm_growth_stage=9": {
+      "model": "elements:block/mulberry_leaves_stage_9"
     }
-  ]
+  }
 }
