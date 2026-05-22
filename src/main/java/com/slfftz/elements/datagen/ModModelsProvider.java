@@ -22,11 +22,14 @@ public class ModModelsProvider extends FabricModelProvider {
         super(output);
     }
 
+    private static final TextureKey BASE_KEY = TextureKey.of("base");
+    private static final TextureKey OVERLAY_KEY = TextureKey.of("overlay");
+
     private static final Model MULBERRY_LEAVES_MODEL = new Model(
             Optional.ofNullable(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves_template")),
             Optional.empty(),
-            TextureKey.TEXTURE,
-            TextureKey.ALL
+            BASE_KEY,
+            OVERLAY_KEY
     );
 
     @Override
@@ -55,9 +58,9 @@ public class ModModelsProvider extends FabricModelProvider {
         registerMulberryLeaves(blockStateModelGenerator);
     }
 
+
     public void registerMulberryLeaves(BlockStateModelGenerator blockStateModelGenerator) {
         Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
-
         Identifier baseTexture = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/gray");
 
         BlockStateVariantMap blockStateVariantMap = BlockStateVariantMap
@@ -66,8 +69,8 @@ public class ModModelsProvider extends FabricModelProvider {
                     int i = integer;
                     Identifier identifier = int2ObjectMap.computeIfAbsent(i, j -> {
                         TextureMap textureMap = new TextureMap();
-                        textureMap.put(TextureKey.TEXTURE, baseTexture);
-                        textureMap.put(TextureKey.ALL,
+                        textureMap.put(BASE_KEY, baseTexture);
+                        textureMap.put(OVERLAY_KEY,
                                 Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_" + j)
                         );
                         return MULBERRY_LEAVES_MODEL.upload(
@@ -82,9 +85,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
         Identifier itemModelId = int2ObjectMap.get(0);
         if (itemModelId != null) {
-            blockStateModelGenerator.registerParentedItemModel(
-                    ModBlocks.MULBERRY_LEAVES, itemModelId
-            );
+            blockStateModelGenerator.registerParentedItemModel(ModBlocks.MULBERRY_LEAVES, itemModelId);
         }
 
         blockStateModelGenerator.blockStateCollector.accept(

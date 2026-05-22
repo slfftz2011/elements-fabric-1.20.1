@@ -1,7 +1,7 @@
 {
   "parent": "elements:block/mulberry_leaves_template",
   "textures": {
-    "all": "elements:block/mulberry_leaves/stage_2",
-    "texture": "elements:block/mulberry_leaves/gray"
+    "base": "elements:block/mulberry_leaves/gray",
+    "overlay": "elements:block/mulberry_leaves/stage_2"
   }
 }
