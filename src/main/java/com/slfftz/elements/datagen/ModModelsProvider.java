@@ -5,7 +5,6 @@ import com.slfftz.elements.blocks.ModBlockFamilies;
 import com.slfftz.elements.blocks.MulberryLeavesBlock;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.blocks.ModBlocks;
-import it.unimi.dsi.fastutil.ints.Int2ObjectFunction;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -23,9 +22,10 @@ public class ModModelsProvider extends FabricModelProvider {
         super(output);
     }
 
-    public static final Model LEAVES_MODEL = new Model(
-            Optional.ofNullable(Identifier.of("minecraft","block/leaves")),
+    private static final Model MULBERRY_LEAVES_MODEL = new Model(
+            Optional.ofNullable(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves_template")),
             Optional.empty(),
+            TextureKey.TEXTURE,
             TextureKey.ALL
     );
 
@@ -57,28 +57,40 @@ public class ModModelsProvider extends FabricModelProvider {
 
     public void registerMulberryLeaves(BlockStateModelGenerator blockStateModelGenerator) {
         Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
-        final TextureMap textureMap = new TextureMap();
-        textureMap.register(TextureKey.ALL, Identifier.of(Elements.MOD_ID, "block/mulberry_leaves"));
-        BlockStateVariantMap blockStateVariantMap = BlockStateVariantMap.create(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE)
-                .register(
-                        integer -> {
-                            int i = integer;
-                            Identifier identifier = int2ObjectMap.computeIfAbsent(
-                                    i, (Int2ObjectFunction<? extends Identifier>)(j -> blockStateModelGenerator.createSubModel(ModBlocks.MULBERRY_LEAVES, "_stage_" + i, LEAVES_MODEL, TextureMap::all))
-                            );
-                            return BlockStateVariant.create().put(VariantSettings.MODEL, identifier);
-                        }
-                );
 
-        Identifier mulberryLeavesModelId = LEAVES_MODEL.upload(
-                ModBlocks.MULBERRY_LEAVES,
-                TextureMap.all(Identifier.of(Elements.MOD_ID, "block/mulberry_leaves_stage_0")),
-                blockStateModelGenerator.modelCollector
+        Identifier baseTexture = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/gray");
+
+        BlockStateVariantMap blockStateVariantMap = BlockStateVariantMap
+                .create(MulberryLeavesBlock.SILKWORM_GROWTH_STAGE)
+                .register(integer -> {
+                    int i = integer;
+                    Identifier identifier = int2ObjectMap.computeIfAbsent(i, j -> {
+                        TextureMap textureMap = new TextureMap();
+                        textureMap.put(TextureKey.TEXTURE, baseTexture);
+                        textureMap.put(TextureKey.ALL,
+                                Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_" + j)
+                        );
+                        return MULBERRY_LEAVES_MODEL.upload(
+                                ModBlocks.MULBERRY_LEAVES,
+                                "_stage_" + j,
+                                textureMap,
+                                blockStateModelGenerator.modelCollector
+                        );
+                    });
+                    return BlockStateVariant.create().put(VariantSettings.MODEL, identifier);
+                });
+
+        Identifier itemModelId = int2ObjectMap.get(0);
+        if (itemModelId != null) {
+            blockStateModelGenerator.registerParentedItemModel(
+                    ModBlocks.MULBERRY_LEAVES, itemModelId
+            );
+        }
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.MULBERRY_LEAVES)
+                        .coordinate(blockStateVariantMap)
         );
-
-        blockStateModelGenerator.registerParentedItemModel(ModBlocks.MULBERRY_LEAVES, mulberryLeavesModelId);
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.MULBERRY_LEAVES).coordinate(blockStateVariantMap));
-
     }
 
     public Identifier id(Block block) {

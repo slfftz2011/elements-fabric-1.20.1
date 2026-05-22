@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/leaves",
+  "parent": "elements:block/mulberry_leaves_template",
   "textures": {
-    "all": "elements:block/mulberry_leaves_stage_7"
+    "all": "elements:block/mulberry_leaves/stage_7",
+    "texture": "elements:block/mulberry_leaves/gray"
   }
 }
