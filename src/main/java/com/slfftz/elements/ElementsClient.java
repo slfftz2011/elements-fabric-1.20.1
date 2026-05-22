@@ -22,7 +22,15 @@ public class ElementsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SPODUMENE_BLOCK, RenderLayer.getTranslucent());
 
         ColorProviderRegistry.BLOCK.register(
-                (state, view, pos, tintIndex) -> view != null && pos != null ? BiomeColors.getFoliageColor(view, pos) : FoliageColors.getDefaultColor(),
+                (state, view, pos, tintIndex) -> {
+                    if (tintIndex == 0) {
+                        if (view != null && pos != null) {
+                            return BiomeColors.getFoliageColor(view, pos);
+                        }
+                        return FoliageColors.getDefaultColor();
+                    }
+                    return -1;
+                },
                 ModBlocks.MULBERRY_LEAVES
         );
         ColorProviderRegistry.ITEM.register(
