@@ -27,6 +27,7 @@
   "block.elements.stripped_mulberry_log": "既扡桑樁",
   "block.elements.stripped_mulberry_wood": "既扡桑木",
   "item.elements.amblygonite": "鋰磷鋁石",
+  "item.elements.cocoon": "繭",
   "item.elements.impurity": "柔面",
   "item.elements.lepidolite_shard": "鋰雲母殘片",
   "item.elements.lithium_battery": "陰陽蓄鋰之氣匣",
@@ -37,6 +38,8 @@
   "item.elements.mulberry": "桑葚",
   "item.elements.mulberry_boat": "桑舟",
   "item.elements.mulberry_chest_boat": "桑艚",
+  "item.elements.silkworm": "蠶",
+  "item.elements.silkworm_eggs": "蠶卵",
   "item.elements.spodumene": "鋰輝石",
   "itemGroup.elements_mod_blocks": "塊方於元質模組",
   "itemGroup.elements_mod_items": "物於元質模組"

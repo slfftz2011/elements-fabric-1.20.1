@@ -27,6 +27,7 @@
   "block.elements.stripped_mulberry_log": "去皮桑木原木",
   "block.elements.stripped_mulberry_wood": "去皮桑木",
   "item.elements.amblygonite": "锂磷铝石",
+  "item.elements.cocoon": "茧",
   "item.elements.impurity": "杂质",
   "item.elements.lepidolite_shard": "锂云母片",
   "item.elements.lithium_battery": "锂电池",
@@ -37,6 +38,8 @@
   "item.elements.mulberry": "桑葚",
   "item.elements.mulberry_boat": "桑木船",
   "item.elements.mulberry_chest_boat": "桑木运输船",
+  "item.elements.silkworm": "蚕",
+  "item.elements.silkworm_eggs": "蚕卵",
   "item.elements.spodumene": "锂辉石",
   "itemGroup.elements_mod_blocks": "元素模组方块",
   "itemGroup.elements_mod_items": "元素模组物品"

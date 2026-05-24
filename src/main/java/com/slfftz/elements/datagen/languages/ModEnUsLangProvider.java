@@ -27,6 +27,11 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.MULBERRY_CHEST_BOAT, "Mulberry Boat with Chest");
         translationBuilder.add(ModItems.MULBERRY, "Mulberry");
 
+        translationBuilder.add(ModItems.SILKWORM_EGGS, "Silkworm Eggs");
+        translationBuilder.add(ModItems.SILKWORM, "Silkworm");
+        translationBuilder.add(ModItems.COCOON, "Cocoon");
+
+
         translationBuilder.add(ModBlocks.SPODUMENE_ORE, "Spodumene Ore");
         translationBuilder.add(ModBlocks.AMBLYGONITE_ORE, "Amblygonite Ore");
         translationBuilder.add(ModBlocks.LEPIDOLITE_ORE, "Lepidolite Ore");

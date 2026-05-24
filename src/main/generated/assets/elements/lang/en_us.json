@@ -27,6 +27,7 @@
   "block.elements.stripped_mulberry_log": "Stripped Mulberry Log",
   "block.elements.stripped_mulberry_wood": "Stripped Mulberry Wood",
   "item.elements.amblygonite": "Amblygonite",
+  "item.elements.cocoon": "Cocoon",
   "item.elements.impurity": "Impurity",
   "item.elements.lepidolite_shard": "Lepidolite Shard",
   "item.elements.lithium_battery": "Lithium Battery",
@@ -37,6 +38,8 @@
   "item.elements.mulberry": "Mulberry",
   "item.elements.mulberry_boat": "Mulberry Boat",
   "item.elements.mulberry_chest_boat": "Mulberry Boat with Chest",
+  "item.elements.silkworm": "Silkworm",
+  "item.elements.silkworm_eggs": "Silkworm Eggs",
   "item.elements.spodumene": "Spodumene",
   "itemGroup.elements_mod_blocks": "Elements Mod Blocks",
   "itemGroup.elements_mod_items": "Elements Mod Items"
