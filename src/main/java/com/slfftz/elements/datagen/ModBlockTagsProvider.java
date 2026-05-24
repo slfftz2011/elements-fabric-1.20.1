@@ -25,6 +25,9 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.SPODUMENE_BLOCK)
                 .add(ModBlocks.AMBLYGONITE_BLOCK);
 
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks.MULBERRY_LEAVES);
+
         //getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
@@ -91,5 +94,8 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.ALL_HANGING_SIGNS)
                 .add(ModBlocks.MULBERRY_HANGING_SIGN)
                 .add(ModBlocks.MULBERRY_WALL_HANGING_SIGN);
+
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(ModBlocks.MULBERRY_LEAVES);
     }
 }

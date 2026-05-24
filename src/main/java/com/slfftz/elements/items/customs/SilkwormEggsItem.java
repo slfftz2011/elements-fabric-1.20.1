@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class SilkwormEggsItem extends Item {
-   private static final String STAGE_KEY = "SilkwormStage";
+    private static final String STAGE_KEY = "SilkwormStage";
 
     public SilkwormEggsItem(Settings settings) {
         super(settings);

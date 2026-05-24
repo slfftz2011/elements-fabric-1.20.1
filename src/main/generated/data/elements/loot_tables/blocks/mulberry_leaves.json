@@ -47,10 +47,10 @@
                 },
                 {
                   "chances": [
-                    0.05,
-                    0.0625,
-                    0.083333336,
-                    0.1
+                    0.1,
+                    0.123,
+                    0.16666667,
+                    0.2
                   ],
                   "condition": "minecraft:table_bonus",
                   "enchantment": "minecraft:fortune"
@@ -184,6 +184,131 @@
             }
           ],
           "name": "elements:mulberry"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "block": "elements:mulberry_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "silkworm_growth_stage": "1"
+              }
+            },
+            {
+              "block": "elements:mulberry_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "silkworm_growth_stage": "2"
+              }
+            },
+            {
+              "block": "elements:mulberry_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "silkworm_growth_stage": "3"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ],
+          "functions": [
+            {
+              "function": "elements:silkworm_stage"
+            }
+          ],
+          "name": "elements:silkworm_eggs"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "block": "elements:mulberry_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "silkworm_growth_stage": "4"
+              }
+            },
+            {
+              "block": "elements:mulberry_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "silkworm_growth_stage": "5"
+              }
+            },
+            {
+              "block": "elements:mulberry_leaves",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "silkworm_growth_stage": "6"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ],
+          "functions": [
+            {
+              "function": "elements:silkworm_stage"
+            }
+          ],
+          "name": "elements:silkworm"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "elements:mulberry_leaves",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "silkworm_growth_stage": "8"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ],
+          "functions": [
+            {
+              "function": "elements:silkworm_stage"
+            }
+          ],
+          "name": "elements:cocoon"
         }
       ],
       "rolls": 1.0

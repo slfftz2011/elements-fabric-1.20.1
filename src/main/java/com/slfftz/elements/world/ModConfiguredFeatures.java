@@ -71,7 +71,7 @@ public class ModConfiguredFeatures {
         ConfiguredFeatures.register(featureRegisterable, MULBERRY_TREE, Feature.TREE,
                 new TreeFeatureConfig.Builder(
                         BlockStateProvider.of(ModBlocks.MULBERRY_LOG),
-                        new StraightTrunkPlacer(4,2,1),
+                        new StraightTrunkPlacer(3,2,1),
                         BlockStateProvider.of(ModBlocks.MULBERRY_LEAVES),
                         new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(2), 3),
                         new TwoLayersFeatureSize(1, 0, 2)

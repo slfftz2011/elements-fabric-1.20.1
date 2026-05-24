@@ -4,8 +4,12 @@ import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.entities.ModBoats;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.items.ModItemGroups;
+import com.slfftz.elements.loot.SilkwormStageLootFunction;
 import com.slfftz.elements.world.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +24,11 @@ public class Elements implements ModInitializer {
         ModItemGroups.registerGroups();
         ModWorldGeneration.register();
         ModBoats.registerBoats();
+        Registry.register(
+                Registries.LOOT_FUNCTION_TYPE,
+                new Identifier(Elements.MOD_ID, "silkworm_stage"),
+                SilkwormStageLootFunction.TYPE
+        );
         LOGGER.info("The elemental world is ready, let's start your adventure!");
     }
 }

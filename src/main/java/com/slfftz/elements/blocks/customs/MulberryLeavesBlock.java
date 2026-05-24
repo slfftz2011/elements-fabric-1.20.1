@@ -115,5 +115,18 @@ public class MulberryLeavesBlock extends LeavesBlock {
     protected boolean shouldDecay(BlockState state) {
         return !(Boolean)state.get(PERSISTENT) && state.get(DISTANCE) == 7 && getSilkwormStage(state) == 0;
     }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+        super.onBlockAdded(state, world, pos, oldState, notify);
+
+        if (!world.isClient()
+                && state.get(SILKWORM_GROWTH_STAGE) == 0
+                && world.getRandom().nextFloat() < 0.01F) {
+            world.setBlockState(pos, state.with(SILKWORM_GROWTH_STAGE, 1), Block.NOTIFY_ALL);
+        }
+    }
+
 }
 
