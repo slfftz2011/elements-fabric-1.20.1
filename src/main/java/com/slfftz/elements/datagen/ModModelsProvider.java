@@ -58,7 +58,6 @@ public class ModModelsProvider extends FabricModelProvider {
         registerMulberryLeaves(blockStateModelGenerator);
     }
 
-
     public void registerMulberryLeaves(BlockStateModelGenerator blockStateModelGenerator) {
         Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
         Identifier baseTexture = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/gray");
@@ -97,6 +96,7 @@ public class ModModelsProvider extends FabricModelProvider {
     public Identifier id(Block block) {
         return Registries.BLOCK.getId(block);
     }
+
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.LITHIUM_INGOT, Models.GENERATED);
@@ -112,5 +112,38 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MULBERRY_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.MULBERRY_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.MULBERRY, Models.GENERATED);
+
+        registerSilkwormEggs(itemModelGenerator);
+    }
+
+    public void registerSilkwormEggs(ItemModelGenerator itemModelGenerator) {
+        Identifier baseEggs = Identifier.of(Elements.MOD_ID, "item/silkworm_eggs");
+        Identifier baseStage1 = Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage1");
+        Identifier baseStage2 = Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage2");
+        Identifier baseStage3 = Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage3");
+
+        Model baseModel = new Model(
+                Optional.ofNullable(Identifier.of("minecraft","item/generated")),
+                Optional.empty(),
+                TextureKey.LAYER0
+        );
+
+        baseModel.upload(
+                Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage1"),
+                TextureMap.layer0(baseStage1),
+                itemModelGenerator.writer
+        );
+
+        baseModel.upload(
+                Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage2"),
+                TextureMap.layer0(baseStage2),
+                itemModelGenerator.writer
+        );
+
+        baseModel.upload(
+                Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage3"),
+                TextureMap.layer0(baseStage3),
+                itemModelGenerator.writer
+        );
     }
 }

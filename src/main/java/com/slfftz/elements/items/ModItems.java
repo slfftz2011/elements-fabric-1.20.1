@@ -3,6 +3,7 @@ package com.slfftz.elements.items;
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.entities.ModBoats;
+import com.slfftz.elements.items.customs.SilkwormEggsItem;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.HangingSignItem;
@@ -48,9 +49,9 @@ public class ModItems {
     );
 
     public static final Item MULBERRY = registerItem("mulberry", new Item(new Item.Settings().food(ModFoodComponents.MULBERRY)));
-    public static final Item SILKWORM_EGGS = registerItem("silkworm_eggs");
+    public static final Item SILKWORM_EGGS = registerItem("silkworm_eggs", new SilkwormEggsItem(new Item.Settings()));
     public static final Item SILKWORM = registerItem("silkworm");
-    public static final Item COCOON = registerItem("silkworm_eggs");
+    public static final Item COCOON = registerItem("cocoon");
     public static final Item SILKWORM_PUPA = registerItem("silkworm_pupa");
     public static final Item COOKED_SILKWORM_PUPA = registerItem("cooked_silkworm_pupa");
 
