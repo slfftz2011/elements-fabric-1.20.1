@@ -4,6 +4,7 @@
     "base": "#base",
     "overlay": "#overlay"
   },
+  "particle": "#base",
   "elements": [
     {
       "from": [0, 0, 0],
