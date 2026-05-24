@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "elements:item/silkworm"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 1 }, "model": "elements:item/silkworm_stage1" },
+    { "predicate": { "custom_model_data": 2 }, "model": "elements:item/silkworm_stage2" },
+    { "predicate": { "custom_model_data": 3 }, "model": "elements:item/silkworm_stage3" }
+  ]
+}

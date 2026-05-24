@@ -114,6 +114,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MULBERRY, Models.GENERATED);
 
         registerSilkwormEggs(itemModelGenerator);
+        registerSilkworm(itemModelGenerator);
     }
 
     public void registerSilkwormEggs(ItemModelGenerator itemModelGenerator) {
@@ -141,6 +142,36 @@ public class ModModelsProvider extends FabricModelProvider {
 
         baseModel.upload(
                 Identifier.of(Elements.MOD_ID, "item/silkworm_eggs_stage3"),
+                TextureMap.layer0(baseStage3),
+                itemModelGenerator.writer
+        );
+    }
+
+    public void registerSilkworm(ItemModelGenerator itemModelGenerator) {
+        Identifier baseStage1 = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_4");
+        Identifier baseStage2 = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_5");
+        Identifier baseStage3 = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_6");
+
+        Model baseModel = new Model(
+                Optional.ofNullable(Identifier.of("minecraft","item/generated")),
+                Optional.empty(),
+                TextureKey.LAYER0
+        );
+
+        baseModel.upload(
+                Identifier.of(Elements.MOD_ID, "item/silkworm_stage1"),
+                TextureMap.layer0(baseStage1),
+                itemModelGenerator.writer
+        );
+
+        baseModel.upload(
+                Identifier.of(Elements.MOD_ID, "item/silkworm_stage2"),
+                TextureMap.layer0(baseStage2),
+                itemModelGenerator.writer
+        );
+
+        baseModel.upload(
+                Identifier.of(Elements.MOD_ID, "item/silkworm_stage3"),
                 TextureMap.layer0(baseStage3),
                 itemModelGenerator.writer
         );

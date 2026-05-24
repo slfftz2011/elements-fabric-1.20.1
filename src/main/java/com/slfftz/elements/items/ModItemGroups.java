@@ -3,9 +3,7 @@ package com.slfftz.elements.items;
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlocks;
 import com.slfftz.elements.items.customs.SilkwormEggsItem;
-import net.minecraft.block.Block;
 import net.minecraft.item.*;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -34,6 +32,9 @@ public class ModItemGroups {
                         entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM_EGGS), 1));
                         entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM_EGGS), 2));
                         entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM_EGGS), 3));
+                        entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM), 1));
+                        entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM), 2));
+                        entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM), 3));
                     }).build());
 
     public static final ItemGroup ELEMENTS_MOD_BLOCKS = Registry.register(

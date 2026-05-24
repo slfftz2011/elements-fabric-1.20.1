@@ -132,7 +132,7 @@ public class ModBlocks {
             BlockSetType.OAK
     ));
     // 树叶 / 树苗
-    public static final Block MULBERRY_LEAVES = register("mulberry_leaves", new MulberryLeavesBlock(LEAVES));
+    public static final Block MULBERRY_LEAVES = register("mulberry_leaves", new MulberryLeavesBlock(LEAVES.strength(0.2F)));
     public static final Block MULBERRY_SAPLING = register("mulberry_sapling", new SaplingBlock(
             new MulberryGeneration(),
             FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
