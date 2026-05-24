@@ -4,12 +4,20 @@
 <p align="center">A Technology Mod For Minecraft Fabric 1.20.1.</p>
 
 <div align="center">
-    <img src="https://img.shields.io/github/last-commit/slfftz2011/elements-fabric-1.20.1" alt="GitHub last commit"/>
-    <img src="https://img.shields.io/github/commit-activity/w/slfftz2011/elements-fabric-1.20.1" alt="GitHub commit activity"/>
-    <img src="https://img.shields.io/github/contributors/slfftz2011/elements-fabric-1.20.1" alt="GitHub contributors"/>
-    <br>
-    <img src="https://img.shields.io/github/languages/code-size/slfftz2011/elements-fabric-1.20.1" alt="GitHub code size in bytes"/>
-    <img src="https://img.shields.io/endpoint?url=https://ghloc.vercel.app/api/slfftz2011/elements-fabric-1.20.1/badge?filter=.java$&label=lines%20of%20code&color=blue" alt="GitHub lines of code"/>
+
+[![Support Version](https://img.shields.io/badge/fabric-1.20.1-green)]()
+
+[![Github last commit](https://img.shields.io/github/last-commit/slfftz2011/elements-fabric-1.20.1)](https://github.com/slfftz2011/elements-fabric-1.20.1/commits/)
+[![Github commit activity](https://img.shields.io/github/commit-activity/w/slfftz2011/elements-fabric-1.20.1)](https://github.com/slfftz2011/elements-fabric-1.20.1/activity/)
+[![Github contributors](https://img.shields.io/github/contributors/slfftz2011/elements-fabric-1.20.1)](https://github.com/slfftz2011/elements-fabric-1.20.1/contributors/)
+
+![Github code size](https://img.shields.io/github/languages/code-size/slfftz2011/elements-fabric-1.20.1)
+![GitHub repo size](https://img.shields.io/github/repo-size/slfftz2011/elements-fabric-1.20.1)
+![Github lines of code](https://5ezz6jithh.execute-api.us-east-1.amazonaws.com/prod/lambda-shield-redirect?user=slfftz2011&repo=elements-fabric-1.20.1)
+
+[![GitHub Downloads](https://img.shields.io/github/downloads/slfftz2011/elements-fabric-1.20.1/total)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/)
+[![GitHub Tag](https://img.shields.io/github/v/tag/slfftz2011/elements-fabric-1.20.1)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/)
+![GitHub Repo stars](https://img.shields.io/github/stars/slfftz2011/elements-fabric-1.20.1)
 </div>
 
 ##### Elements is the interesting technology and optimized mod For Fabric MC 1.20.1,and we (well, I'm the only one) are committed to restoring real-life chemistry and fixing unscientific aspects in the original version of Minecraft.
@@ -22,15 +30,19 @@
 ## 📥 Downloads
 ### All builds
 The builds still under testing have incomplete functionality and may encounter errors. They may no longer be supported in the future.
-- [Latest Test Build](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/tag/v0.5.0)
+- [![Latest Test Build](https://img.shields.io/badge/Latest_Test-v0.7.4-yellow)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/latest)
 - [All Builds](https://github.com/slfftz2011/elements-fabric-1.20.1/releases)
-
+    + [![v0.7.4](https://img.shields.io/badge/v0.7.4-lemo)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/tag/v0.7.4)
+    + [![v0.6.0](https://img.shields.io/badge/v0.6.0-yellow)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/tag/v0.6.0)
+    + [![v0.5.0](https://img.shields.io/badge/v0.5.0-red)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/tag/v0.5.0)
+    + [![v0.4.1](https://img.shields.io/badge/v0.4.1-orange)](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/tag/v0.4.1)
+    
 Click on **elements-X.X.X.jar**, the download will start in a few seconds.
 
 ### Stable builds
 We are still in the development stage and there is no stable builds available.
 ### For developers
-- [Latest Build](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/tag/v0.5.0)
+- [Latest Build](https://github.com/slfftz2011/elements-fabric-1.20.1/releases/latest)
 - [All Builds](https://github.com/slfftz2011/elements-fabric-1.20.1/releases)
 
 Click on **Source Code.zip** or **Source Code.tar.gz**, extract the file after downloading is complete.
@@ -58,7 +70,7 @@ with `./gradlew.bat` (Windows) or `./gradlew` (macOS and Linux).
 ## 📜 License
 Except where otherwise stated, the content of this repository is provided under the [CC0 1.0](LICENSE) license.
 
----
+<!---
 **☟中国大陆的朋友看下面！☟**
 
 ---
@@ -105,3 +117,4 @@ Except where otherwise stated, the content of this repository is provided under 
 ##### 看不懂用翻译哦QwQ 
 - 开学了，www TwT -- 25/9/9 21:57
 
+-->
