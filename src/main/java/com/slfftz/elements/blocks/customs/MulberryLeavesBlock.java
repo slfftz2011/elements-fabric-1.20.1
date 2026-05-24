@@ -1,5 +1,6 @@
-package com.slfftz.elements.blocks;
+package com.slfftz.elements.blocks.customs;
 
+import com.slfftz.elements.blocks.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;

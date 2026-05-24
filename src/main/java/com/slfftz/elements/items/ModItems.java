@@ -48,7 +48,11 @@ public class ModItems {
     );
 
     public static final Item MULBERRY = registerItem("mulberry", new Item(new Item.Settings().food(ModFoodComponents.MULBERRY)));
-
+    public static final Item SILKWORM_EGGS = registerItem("silkworm_eggs");
+    public static final Item SILKWORM = registerItem("silkworm");
+    public static final Item COCOON = registerItem("silkworm_eggs");
+    public static final Item SILKWORM_PUPA = registerItem("silkworm_pupa");
+    public static final Item COOKED_SILKWORM_PUPA = registerItem("cooked_silkworm_pupa");
 
     public static Item registerItem(String id) {
         Item item = registerItem(id, new Item.Settings());

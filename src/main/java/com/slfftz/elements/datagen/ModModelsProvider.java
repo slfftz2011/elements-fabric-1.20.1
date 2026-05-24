@@ -2,7 +2,7 @@ package com.slfftz.elements.datagen;
 
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.ModBlockFamilies;
-import com.slfftz.elements.blocks.MulberryLeavesBlock;
+import com.slfftz.elements.blocks.customs.MulberryLeavesBlock;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.blocks.ModBlocks;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
