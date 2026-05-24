@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-24T19:17:31.7961975	Elements/Block Loot Tables
+// 1.20.1	2026-05-24T19:21:58.3460024	Elements/Block Loot Tables
 175a19914fdf1de14ec2501aca8a8f9c682c1f54 data\elements\loot_tables\blocks\stripped_mulberry_log.json
 280df1cd0eadc306bd9de736f72874110530e94b data\elements\loot_tables\blocks\amblygonite_block.json
 97b1f2c55042f010641254faab64c121ff156352 data\elements\loot_tables\blocks\lepidolite_block.json
@@ -21,6 +21,6 @@ bd26b082890a47877397be219bf33f48161f5752 data\elements\loot_tables\blocks\mulber
 d825545f490bf1e3b87c6344cf7a3180e3df86d4 data\elements\loot_tables\blocks\mulberry_button.json
 d58f190038b3a81c261feab243d523b11eb6990d data\elements\loot_tables\blocks\mulberry_planks.json
 0a81a700f0fc272fabdacefdd99bba82424a7887 data\elements\loot_tables\blocks\deepslate_spodumene_ore.json
-284cf404f862f18236e0ec79d8b5898cc073e8c7 data\elements\loot_tables\blocks\mulberry_sign.json
 99695d6e8a45b5b9536cebd3bd0d866049c47482 data\elements\loot_tables\blocks\spodumene_ore.json
+284cf404f862f18236e0ec79d8b5898cc073e8c7 data\elements\loot_tables\blocks\mulberry_sign.json
 8228e5122f992a8bc51c4b361c3cb9a3a14353f1 data\elements\loot_tables\blocks\mulberry_stairs.json

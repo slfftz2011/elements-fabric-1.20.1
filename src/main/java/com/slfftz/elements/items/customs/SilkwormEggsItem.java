@@ -63,12 +63,12 @@ public class SilkwormEggsItem extends Item {
         if (state.getBlock() instanceof MulberryLeavesBlock
                 && MulberryLeavesBlock.getSilkwormStage(world, pos) == 0) {
 
-            int eggStage = 0;
+            int rawStage = 0;
             if (stack != null) {
-                eggStage = getStage(stack);
+                rawStage = getStage(stack);
             }
             // stage 为 0（默认）时视作 stage 1
-            int targetStage = Math.max(1, Math.min(3, eggStage == 0 ? 1 : eggStage));
+            int targetStage = Math.max(1, Math.min(3, rawStage == 0 ? 1 : rawStage));
 
 
             if (!world.isClient()) {

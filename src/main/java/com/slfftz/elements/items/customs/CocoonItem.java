@@ -14,38 +14,11 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SilkwormItem extends Item {
-   private static final String STAGE_KEY = "SilkwormStage";
+public class CocoonItem extends Item {
 
-    public SilkwormItem(Settings settings) {
+    public CocoonItem(Settings settings) {
         super(settings);
     }
-
-    // ---------- Stage 读写 ----------
-
-    /** 从 ItemStack 读取 stage，默认返回 0 */
-    public static int getStage(ItemStack stack) {
-        NbtCompound nbt = stack.getNbt();
-        if (nbt != null && nbt.contains(STAGE_KEY)) {
-            return nbt.getInt(STAGE_KEY);
-        }
-        return 0;
-    }
-
-    /**
-     * 设置 stage 并同步更新 CustomModelData
-     *
-     * @return stack
-     */
-    public static ItemStack setStage(ItemStack stack, int stage) {
-        int clamped = Math.max(1, Math.min(3, stage));
-        NbtCompound nbt = stack.getOrCreateNbt();
-        nbt.putInt(STAGE_KEY, clamped);
-        nbt.putInt("CustomModelData", clamped); // model_data 与 stage 一致
-        return stack;
-    }
-
-    // ---------- 使用逻辑 ----------
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -63,13 +36,7 @@ public class SilkwormItem extends Item {
         if (state.getBlock() instanceof MulberryLeavesBlock
                 && MulberryLeavesBlock.getSilkwormStage(world, pos) == 0) {
 
-            int rawStage = 0;
-            if (stack != null) {
-                rawStage = getStage(stack);
-            }
-            // stage 为 0（默认）时视作 stage 4
-            int targetStage = Math.max(1, Math.min(3, rawStage == 0 ? 1 : rawStage)) + 3;
-
+            final int targetStage = 8;
 
             if (!world.isClient()) {
                 MulberryLeavesBlock.setSilkwormStage(world, pos, targetStage);

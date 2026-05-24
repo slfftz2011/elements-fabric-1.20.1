@@ -115,6 +115,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
         registerSilkwormEggs(itemModelGenerator);
         registerSilkworm(itemModelGenerator);
+        itemModelGenerator.register(ModItems.COCOON, Models.GENERATED);
     }
 
     public void registerSilkwormEggs(ItemModelGenerator itemModelGenerator) {
