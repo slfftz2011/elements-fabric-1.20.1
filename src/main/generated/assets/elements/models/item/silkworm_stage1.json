@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "elements:block/mulberry_leaves/stage_4"
+    "layer0": "elements:item/silkworm/stage_1"
   }
 }

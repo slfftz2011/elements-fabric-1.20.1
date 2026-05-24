@@ -148,9 +148,9 @@ public class ModModelsProvider extends FabricModelProvider {
     }
 
     public void registerSilkworm(ItemModelGenerator itemModelGenerator) {
-        Identifier baseStage1 = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_4");
-        Identifier baseStage2 = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_5");
-        Identifier baseStage3 = Identifier.of(Elements.MOD_ID, "block/mulberry_leaves/stage_6");
+        Identifier baseStage1 = Identifier.of(Elements.MOD_ID, "item/silkworm/stage_1");
+        Identifier baseStage2 = Identifier.of(Elements.MOD_ID, "item/silkworm/stage_2");
+        Identifier baseStage3 = Identifier.of(Elements.MOD_ID, "item/silkworm/stage_3");
 
         Model baseModel = new Model(
                 Optional.ofNullable(Identifier.of("minecraft","item/generated")),
