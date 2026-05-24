@@ -37,7 +37,7 @@ public class SilkwormStageLootFunction extends ConditionalLootFunction {
 
         BlockState state = context.get(LootContextParameters.BLOCK_STATE);
         if (state != null && state.getBlock() instanceof MulberryLeavesBlock) {
-            int stage = MulberryLeavesBlock.getSilkwormStage(world, pos);
+            int stage = MulberryLeavesBlock.getSilkwormStage(state);
             if (stage >= 1 && stage <= 3 && stack.getItem() == ModItems.SILKWORM_EGGS) {
                 return SilkwormEggsItem.setStage(stack, stage);
             }

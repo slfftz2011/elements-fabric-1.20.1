@@ -29,6 +29,7 @@ public class ModItemGroups {
                         }
                         entries.add(ModItems.MULBERRY_BOAT);
                         entries.add(ModItems.MULBERRY_CHEST_BOAT);
+                        entries.add(ModItems.MULBERRY);
                         entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM_EGGS), 1));
                         entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM_EGGS), 2));
                         entries.add(SilkwormEggsItem.setStage(new ItemStack(ModItems.SILKWORM_EGGS), 3));

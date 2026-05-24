@@ -48,7 +48,7 @@ public class MulberryLeavesBlock extends LeavesBlock {
 
     public static int getMaxStage() { return MAX_STAGE; }
 
-    protected static int getSilkwormStage(BlockState state) {
+    public static int getSilkwormStage(BlockState state) {
         return state.get(SILKWORM_GROWTH_STAGE);
     }
 
