@@ -10,9 +10,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldView;
 
-public class MulberryLeavesBlock extends LeavesBlock implements Fertilizable {
+public class MulberryLeavesBlock extends LeavesBlock {
     public static final int MAX_STAGE = 9;
     public static final IntProperty SILKWORM_GROWTH_STAGE = IntProperty.of("silkworm_growth_stage", 0, 9);
     public MulberryLeavesBlock(Settings settings) {
@@ -48,8 +47,16 @@ public class MulberryLeavesBlock extends LeavesBlock implements Fertilizable {
 
     public static int getMaxStage() { return MAX_STAGE; }
 
-    public static int getSilkwormStage(BlockState state) {
+    protected static int getSilkwormStage(BlockState state) {
         return state.get(SILKWORM_GROWTH_STAGE);
+    }
+
+    public static int getSilkwormStage(World world, BlockPos pos) {
+        BlockState state = world.getBlockState(pos);
+        if (state.getBlock() == ModBlocks.MULBERRY_LEAVES) {
+            return getSilkwormStage(state);
+        }
+        return -1;
     }
 
     public static void growSilkworm(World world, BlockPos pos) {
@@ -63,6 +70,7 @@ public class MulberryLeavesBlock extends LeavesBlock implements Fertilizable {
                 Direction.WEST,  Direction.EAST
         };
 
+        boolean flag = false;
         for (Direction dir : horizontals) {
             BlockPos adjacentPos = pos.offset(dir);
             BlockState adjacentState = world.getBlockState(adjacentPos);
@@ -70,10 +78,11 @@ public class MulberryLeavesBlock extends LeavesBlock implements Fertilizable {
             if (adjacentState.getBlock() == ModBlocks.MULBERRY_LEAVES
                     && getSilkwormStage(adjacentState) == 0) {
                 growSilkworm(world, adjacentPos);
+                flag = true;
             }
         }
 
-        world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+        if (flag) world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
     }
 
     @Override
@@ -88,10 +97,10 @@ public class MulberryLeavesBlock extends LeavesBlock implements Fertilizable {
             world.removeBlock(pos, false);
             return;
         }
-        if (world.getBaseLightLevel(pos, 0) >= 8) {
+        if (world.getBaseLightLevel(pos, 0) >= 8 && getSilkwormStage(state) != 0) {
             float f = getAvailableMoisture(this, world, pos);
             if (random.nextInt((int)(25.0F / f) + 1) == 0) {
-                grow(world, random, pos, state);
+                growSilkworm(world, pos);
             }
         }
     }
@@ -104,21 +113,6 @@ public class MulberryLeavesBlock extends LeavesBlock implements Fertilizable {
     @Override
     protected boolean shouldDecay(BlockState state) {
         return !(Boolean)state.get(PERSISTENT) && state.get(DISTANCE) == 7 && getSilkwormStage(state) == 0;
-    }
-
-    @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
-        return true;
-    }
-
-    @Override
-    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return true;
-    }
-
-    @Override
-    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        growSilkworm(world, pos);
     }
 }
 
