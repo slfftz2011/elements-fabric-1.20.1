@@ -32,12 +32,17 @@ public class SilkwormEggsItem extends Item {
         return 0;
     }
 
-    /** 设置 stage 并同步更新 CustomModelData */
-    public static void setStage(ItemStack stack, int stage) {
+    /**
+     * 设置 stage 并同步更新 CustomModelData
+     *
+     * @return stack
+     */
+    public static ItemStack setStage(ItemStack stack, int stage) {
         int clamped = Math.max(1, Math.min(3, stage));
         NbtCompound nbt = stack.getOrCreateNbt();
         nbt.putInt(STAGE_KEY, clamped);
         nbt.putInt("CustomModelData", clamped); // model_data 与 stage 一致
+        return stack;
     }
 
     // ---------- 使用逻辑 ----------
