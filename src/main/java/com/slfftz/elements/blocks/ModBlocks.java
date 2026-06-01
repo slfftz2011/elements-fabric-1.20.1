@@ -2,6 +2,7 @@ package com.slfftz.elements.blocks;
 
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.customs.MulberryLeavesBlock;
+import com.slfftz.elements.blocks.customs.SilkwormCauldronBlock;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.world.tree.MulberryGeneration;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
@@ -172,6 +173,11 @@ public class ModBlocks {
             )
     );
 
+    // 蚕茧处理炼药锅
+    public static final Block SILKWORM_CAULDRON = register("silkworm_cauldron", new SilkwormCauldronBlock(
+            AbstractBlock.Settings.copy(Blocks.CAULDRON)
+                    .nonOpaque()
+    ));
 
     public static Block register(String id, Block block) {
         registerBlockItems(id, block);
