@@ -30,6 +30,8 @@ public class ModLzhLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.SILKWORM_EGGS, "蠶卵");
         translationBuilder.add(ModItems.SILKWORM, "蠶");
         translationBuilder.add(ModItems.COCOON, "繭");
+        translationBuilder.add(ModItems.SILKWORM_PUPA, "蠶蛹");
+        translationBuilder.add(ModItems.WRAPPED_STICK, "纏絲之棞");
 
 
         translationBuilder.add(ModBlocks.SPODUMENE_ORE, "鋰輝石礦");
@@ -60,6 +62,7 @@ public class ModLzhLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.elements.mulberry_hanging_sign", "桑懸牌");
         translationBuilder.add("block.elements.mulberry_wall_sign", "壁桑牌");
         translationBuilder.add("block.elements.mulberry_wall_hanging_sign", "壁桑懸牌");
+        translationBuilder.add(ModBlocks.SILKWORM_CAULDRON, "蠶繭鍊藥鼎");
 
         translationBuilder.add("itemGroup.elements_mod_items", "物於元質模組");
         translationBuilder.add("itemGroup.elements_mod_blocks","塊方於元質模組");
