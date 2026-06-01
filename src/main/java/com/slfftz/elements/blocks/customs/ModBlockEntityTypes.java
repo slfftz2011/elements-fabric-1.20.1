@@ -5,6 +5,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import com.slfftz.elements.Elements;
+import com.slfftz.elements.blocks.ModBlocks;
 
 public class ModBlockEntityTypes {
     public static final BlockEntityType<SilkwormCauldronBlockEntity> SILKWORM_CAULDRON = 
@@ -13,7 +14,7 @@ public class ModBlockEntityTypes {
                     new Identifier(Elements.MOD_ID, "silkworm_cauldron"),
                     BlockEntityType.Builder.create(
                             SilkwormCauldronBlockEntity::new,
-                            ModBlocksCustom.SILKWORM_CAULDRON
+                            ModBlocks.SILKWORM_CAULDRON
                     ).build(null)
             );
 
