@@ -23,11 +23,19 @@
 		],
         "client": [
             "com.slfftz.elements.ElementsClient"
+        ],
+        "cardinal-components": [
+            "com.slfftz.elements.Elements"
         ]
 	},
 	"mixins": [
 		"elements.mixins.json"
 	],
+    "custom": {
+      "cardinal-components": [
+        "elements:cauldron_data"
+      ]
+    },
 	"depends": {
 		"fabricloader": ">=0.17.2",
 		"minecraft": "~1.20.1",

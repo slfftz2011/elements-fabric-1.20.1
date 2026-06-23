@@ -2,6 +2,7 @@ package com.slfftz.elements.blocks;
 
 import com.slfftz.elements.Elements;
 import com.slfftz.elements.blocks.customs.MulberryLeavesBlock;
+import com.slfftz.elements.blocks.entity.ModCauldronBlockEntity;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.world.tree.MulberryGeneration;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
@@ -9,10 +10,12 @@ import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -22,6 +25,8 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 
 import java.util.function.ToIntFunction;
+
+import static com.slfftz.elements.Elements.MOD_ID;
 
 public class ModBlocks {
 
@@ -138,9 +143,9 @@ public class ModBlocks {
             FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
     ));
     // 告示牌 / 墙上的告示牌 / 悬挂式告示牌 / 墙上的悬挂式告示牌
-    public static final Identifier MULBERRY_SIGN_TEXTURE = new Identifier(Elements.MOD_ID, "entity/signs/mulberry");
-    public static final Identifier MULBERRY_HANGING_SIGN_TEXTURE = new Identifier(Elements.MOD_ID, "entity/signs/hanging/mulberry");
-    public static final Identifier MULBERRY_HANGING_SIGN_GUI = new Identifier(Elements.MOD_ID, "textures/gui/hanging_signs/mulberry");
+    public static final Identifier MULBERRY_SIGN_TEXTURE = new Identifier(MOD_ID, "entity/signs/mulberry");
+    public static final Identifier MULBERRY_HANGING_SIGN_TEXTURE = new Identifier(MOD_ID, "entity/signs/hanging/mulberry");
+    public static final Identifier MULBERRY_HANGING_SIGN_GUI = new Identifier(MOD_ID, "textures/gui/hanging_signs/mulberry");
 
     public static final Block MULBERRY_SIGN = register0("mulberry_sign",
             new TerraformSignBlock(MULBERRY_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
@@ -181,11 +186,11 @@ public class ModBlocks {
     }
 
     public static Block register0(String id, Block block) {
-        return Registry.register(Registries.BLOCK, new Identifier(Elements.MOD_ID, id), block);
+        return Registry.register(Registries.BLOCK, new Identifier(MOD_ID, id), block);
     }
 
     public static void registerBlockItems(String id, Block block) {
-        Registry.register(Registries.ITEM, new Identifier(Elements.MOD_ID, id), new BlockItem(block, new Item.Settings()));
+        Registry.register(Registries.ITEM, new Identifier(MOD_ID, id), new BlockItem(block, new Item.Settings()));
     }
 
 
@@ -224,6 +229,14 @@ public class ModBlocks {
         FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_SIGN.asItem(), 200);
         FuelRegistry.INSTANCE.add(ModBlocks.MULBERRY_HANGING_SIGN.asItem(), 800);
     }
+
+    public static final BlockEntityType<ModCauldronBlockEntity> CAULDRON_BE =
+            Registry.register(
+                    Registries.BLOCK_ENTITY_TYPE,
+                    new Identifier(Elements.MOD_ID, "cauldron_be"),
+                    FabricBlockEntityTypeBuilder.create(ModCauldronBlockEntity::new, Blocks.CAULDRON)
+                            .build()
+            );
 
     public static ToIntFunction<BlockState> createLightLevelFromLitBlockState(int litLevel) {
         return state -> state.get(Properties.LIT) ? litLevel : 0;

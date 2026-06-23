@@ -1,6 +1,7 @@
 package com.slfftz.elements;
 
 import com.slfftz.elements.blocks.ModBlocks;
+import com.slfftz.elements.client.renderer.CauldronItemRenderer;
 import com.slfftz.elements.entities.ModBoats;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
@@ -39,5 +40,6 @@ public class ElementsClient implements ClientModInitializer {
         );
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.MULBERRY_BOAT, false);
+        CauldronItemRenderer.init();
     }
 }
