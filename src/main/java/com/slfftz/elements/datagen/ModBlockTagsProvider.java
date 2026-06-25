@@ -1,8 +1,10 @@
 package com.slfftz.elements.datagen;
 
 import com.slfftz.elements.blocks.ModBlocks;
+import com.slfftz.elements.tag.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -97,5 +99,12 @@ public class ModBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.MULBERRY_LEAVES);
+
+        getOrCreateTagBuilder(ModTags.CAULDRON_HEAT_SOURCES)
+                .add(Blocks.FURNACE)
+                .add(Blocks.CAMPFIRE)
+                .add(Blocks.SOUL_CAMPFIRE)
+                .add(Blocks.MAGMA_BLOCK)
+                .add(Blocks.LAVA);
     }
 }

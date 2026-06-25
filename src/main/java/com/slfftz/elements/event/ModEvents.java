@@ -1,7 +1,7 @@
 package com.slfftz.elements.event;
 
 import com.slfftz.elements.blocks.entity.ModCauldronBlockEntity;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerBlockEntityEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -16,21 +16,30 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import com.slfftz.elements.component.CauldronDataComponent;
 import com.slfftz.elements.component.ModComponents;
 import com.slfftz.elements.items.ModItems;
 
 public class ModEvents {
     public static void init() {
-        // 监听世界加载（如果需要迁移旧存档，可在这里实现）
-        ServerWorldEvents.LOAD.register((server, world) -> {
-            // 可以在这里一次性迁移所有水炼药锅，但建议不做，让玩家自己重新放置
+        // 监听 BlockEntity 加载，加入活跃列表
+        ServerBlockEntityEvents.BLOCK_ENTITY_LOAD.register((blockEntity, world) -> {
+            if (!world.isClient && blockEntity instanceof ModCauldronBlockEntity) {
+                ModTickHandler.addActive(blockEntity.getPos());
+            }
+        });
+
+        // 监听 BlockEntity 卸载，移除活跃列表
+        ServerBlockEntityEvents.BLOCK_ENTITY_UNLOAD.register((blockEntity, world) -> {
+            if (!world.isClient && blockEntity instanceof ModCauldronBlockEntity) {
+                ModTickHandler.removeActive(blockEntity.getPos());
+            }
         });
 
         // 监听玩家右键点击
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             BlockPos pos = hitResult.getBlockPos();
             BlockState state = world.getBlockState(pos);
-            // 只处理水炼药锅（有水位）
             if (state.isOf(Blocks.WATER_CAULDRON) && state.get(LeveledCauldronBlock.LEVEL) > 0) {
                 return onCauldronInteract(player, world, hand, pos, hitResult);
             }
@@ -43,7 +52,7 @@ public class ModEvents {
         var be = world.getBlockEntity(pos);
         if (!(be instanceof ModCauldronBlockEntity)) return ActionResult.PASS;
 
-        var comp = ModComponents.CAULDRON_DATA.getNullable(be);
+        CauldronDataComponent comp = ModComponents.CAULDRON_DATA.getNullable(be);
         if (comp == null) return ActionResult.PASS;
 
         // 空手右键 -> 取出物品
@@ -53,6 +62,8 @@ public class ModEvents {
                 player.giveItemStack(stored.copy());
                 comp.setStoredItem(ItemStack.EMPTY);
                 world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 1f, 1f);
+                // 锅已空，移除活跃列表
+                ModTickHandler.removeActive(pos);
                 return ActionResult.SUCCESS;
             }
             return ActionResult.PASS;
@@ -64,6 +75,8 @@ public class ModEvents {
             player.giveItemStack(new ItemStack(ModItems.WRAPPED_STICK, 1));
             comp.setStoredItem(ItemStack.EMPTY);
             world.playSound(null, pos, SoundEvents.ENTITY_ITEM_FRAME_ADD_ITEM, SoundCategory.PLAYERS, 1f, 1f);
+            // 移除活跃列表
+            ModTickHandler.removeActive(pos);
             return ActionResult.SUCCESS;
         }
 
@@ -75,11 +88,15 @@ public class ModEvents {
                 comp.setCocoonCount(1);
                 if (!player.isCreative()) stack.decrement(1);
                 world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 1f, 1f);
+                // 首次存入，加入活跃列表
+                ModTickHandler.addActive(pos);
                 return ActionResult.SUCCESS;
             } else if (stored.getItem() == ModItems.COCOON && comp.getCocoonCount() < 16) {
                 comp.incrementCocoonCount();
                 if (!player.isCreative()) stack.decrement(1);
                 world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 1f, 1f);
+                // 已有蚕茧但未满，确保在活跃列表中（可能已存在，重复添加也无害）
+                ModTickHandler.addActive(pos);
                 return ActionResult.SUCCESS;
             }
         }

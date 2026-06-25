@@ -234,7 +234,7 @@ public class ModBlocks {
             Registry.register(
                     Registries.BLOCK_ENTITY_TYPE,
                     new Identifier(Elements.MOD_ID, "cauldron_be"),
-                    FabricBlockEntityTypeBuilder.create(ModCauldronBlockEntity::new, Blocks.CAULDRON)
+                    FabricBlockEntityTypeBuilder.create(ModCauldronBlockEntity::new, Blocks.WATER_CAULDRON)
                             .build()
             );
 

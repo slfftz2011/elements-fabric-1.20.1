@@ -1,10 +1,10 @@
 package com.slfftz.elements.client.renderer;
 
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.ItemRenderer;
-import net.minecraft.client.render.item.ItemRenderContext;
+import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
@@ -22,8 +22,8 @@ public class CauldronItemRenderer {
     public static void init() {
         WorldRenderEvents.AFTER_ENTITIES.register(context -> {
             var camera = context.camera();
-            var matrixStack = context.matrixStack();  // MatrixStack
-            var buffer = context.consumers();         // VertexConsumerProvider
+            var matrixStack = context.matrixStack();
+            var buffer = context.consumers();
             var world = context.world();
 
             BlockPos center = camera.getBlockPos();
@@ -59,38 +59,32 @@ public class CauldronItemRenderer {
         float progress = Math.min(1f, comp.getProcessTime() / 800f);
         float yBase = 0.3f - progress * 0.15f;
 
-        var itemRenderer = Minecraft.getInstance().getItemRenderer();
+        var itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 
         for (int i = 0; i < renderLimit; i++) {
             matrixStack.push();
 
-            // 移到炼药锅中心
             matrixStack.translate(pos.getX() + 0.5, pos.getY() + yBase, pos.getZ() + 0.5);
 
-            // 在水平面上分散
             double angle = (i * 90) + (pos.hashCode() * 37 % 360);
             double radius = 0.15;
             matrixStack.translate(Math.cos(Math.toRadians(angle)) * radius, 0,
                     Math.sin(Math.toRadians(angle)) * radius);
 
-            // ✅ 使用 RotationAxis 进行旋转（Yarn 映射）
             float angleX = 45f * (1 - progress);
             matrixStack.multiply(RotationAxis.POSITIVE_X.rotationDegrees(angleX));
             matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(
                     (pos.hashCode() * 37 + i * 101) % 360
             ));
 
-            // 缩放
             boolean isBlock = itemRenderer.getModel(stack, world, null, 0).hasDepth();
             float scale = isBlock ? 0.5f : 0.4f;
             matrixStack.scale(scale, scale, scale);
 
-            // 获取光照
             int light = world.getLightLevel(pos);
 
-            // 渲染物品
-            itemRenderer.renderItem(stack, ItemRenderContext.FIXED, light, 0,
-                    matrixStack, buffer, world, 0);
+            BakedModel model = itemRenderer.getModel(stack, world, null, 0);
+            itemRenderer.renderItem(stack, ModelTransformationMode.FIXED, false, matrixStack, buffer, light, 0, model);
 
             matrixStack.pop();
         }

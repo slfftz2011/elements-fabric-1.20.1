@@ -5,6 +5,7 @@ import com.slfftz.elements.blocks.entity.ModCauldronBlockEntity;
 import com.slfftz.elements.component.CauldronDataComponentImpl;
 import com.slfftz.elements.component.ModComponents;
 import com.slfftz.elements.entities.ModBoats;
+import com.slfftz.elements.event.ModTickHandler;
 import com.slfftz.elements.items.ModItems;
 import com.slfftz.elements.items.ModItemGroups;
 import com.slfftz.elements.loot.SilkwormStageLootFunction;
@@ -35,6 +36,7 @@ public class Elements implements ModInitializer, BlockComponentInitializer {
                 new Identifier(Elements.MOD_ID, "silkworm_stage"),
                 SilkwormStageLootFunction.TYPE
         );
+        ModTickHandler.init();
         ModEvents.init();
         LOGGER.info("The elemental world is ready, let's start your adventure!");
     }
